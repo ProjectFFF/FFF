@@ -133,13 +133,19 @@
               <a class="nav-link" href="#">내 설정</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"
+              <a
+                class="nav-link disabled"
+                href="#"
+                tabindex="-1"
+                aria-disabled="true"
                 >님 반갑습니다</a
               >
             </li>
           </ul>
           <form class="form-inline mt-2 mt-md-0">
-            <button type="button" class="btn btn-info">LogIn/SignUp</button>
+            <a class="btn btn-info" href="{%url 'login'%}" role="button"
+              >LogIn/SignUp</a
+            >
             <!--
             <input
               class="form-control mr-sm-2"
