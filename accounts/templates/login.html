@@ -1,4 +1,6 @@
-{% extends 'base.html'%} {% block contents %}
+{% extends 'base.html'%} {% load static %} {% block design %}
+<link rel="stylesheet" href="{% static 'design.css'%}" type="text/css" />
+{%endblock%} {% block contents %}
 <div class="container h-100">
   <div class="row h-100 justify-content-center align-items-center">
     <form class="col-12">
