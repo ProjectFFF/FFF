@@ -1,5 +1,5 @@
-{% extends 'base.html'%} {% block design %}
-<link rel="stylesheet" href="design.css" type="text/css" />
+{% extends 'base.html'%} {% load static %} {% block design %}
+<link rel="stylesheet" href="{% static 'design.css'%}" type="text/css" />
 {%endblock%} {% block contents %}
 <div class="container h-100">
   <div class="row h-100 justify-content-center align-items-center">
