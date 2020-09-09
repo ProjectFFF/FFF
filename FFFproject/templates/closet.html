@@ -1,38 +1,43 @@
-<div class="account_container">
-  <!-- below the navbar -->
-  <div class="row">
-    <div class="col-lg-4">
-      <svg
-        class="bd-placeholder-img rounded-circle"
-        width="140"
-        height="140"
-        xmlns="http://www.w3.org/2000/svg"
-        preserveAspectRatio="xMidYMid slice"
-        focusable="false"
-        role="img"
-        aria-label="Placeholder: 140x140"
-      >
-        <title>Placeholder</title>
-        <rect width="100%" height="100%" fill="#777" />
-        <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-      </svg>
-      <h2>사용자 이름</h2>
-      <p>사용자 프로필이 담길 공간입니다</p>
-      <p>
-        <a class="btn btn-secondary" href="#" role="button">내 정보 &raquo;</a>
-      </p>
+<section class="jumbotron text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <svg
+          class="bd-placeholder-img rounded-circle"
+          width="140"
+          height="140"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid slice"
+          focusable="false"
+          role="img"
+          aria-label="Placeholder: 140x140"
+        >
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#777" />
+          <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+        </svg>
+        <h2>사용자 이름</h2>
+        <p>사용자 프로필이 담길 공간입니다</p>
+        <p>
+          <a class="btn btn-secondary" href="#" role="button"
+            >내 정보 &raquo;</a
+          >
+        </p>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- START THE FEATURETTES -->
+<hr class="featurette-divider" />
 
-  <hr class="featurette-divider" />
-
-  <div class="btn-group-lg" role="group" aria-label="Basic example">
-    <button type="button" class="btn btn-secondary">새로입력</button>
-    <button type="button" class="btn btn-secondary">사이즈 기록</button>
-    <button type="button" class="btn btn-secondary">내옷장</button>
-  </div>
-  <hr class="featurette-divider" />
-  {% block closet %} {% endblock %}
+<div class="btn-group-lg" role="group" aria-label="Basic example">
+  <a role="button" class="btn btn-secondary" href="{%url 'new'%}"> 새로입력 </a>
+  <a role="button" class="btn btn-secondary" href="{%url 'record'%}">
+    사이즈 기록
+  </a>
+  <a role="button" class="btn btn-secondary" href="{%url 'mycloset'%}">
+    내옷장
+  </a>
 </div>
+<hr class="featurette-divider" />
+{% block closet %} {% endblock %}
