@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'closets',
     'mysettings',
     'sizecompares',
+    'othersclosets',
 ]
 
 MIDDLEWARE = [
