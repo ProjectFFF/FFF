@@ -25,6 +25,8 @@ import mysettings.urls
 import mysettings.views
 import sizecompares.urls
 import sizecompares.views
+import othersclosets.urls
+import othersclosets.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -34,5 +36,6 @@ urlpatterns = [
     path('closets/', include('closets.urls')),
     path('mysettings/', include('mysettings.urls')),
     path('sizecompares/', include('sizecompares.urls')),
+    path('othersclosets/', include('othersclosets.urls')),
 ]
     
