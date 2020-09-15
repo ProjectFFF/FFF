@@ -1,0 +1,82 @@
+{% extends 'base.html'%} {% block contents %}
+<style type="text/css">
+  .compare_title {
+    padding: 100px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-template-rows: repeat(auto-fit, 1fr);
+    flex-flow: row wrap;
+    align-items: center;
+    vertical-align: middle;
+  }
+
+  .mysize1 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .mysize2 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .mysize3 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+</style>
+
+<div class="compare_title">
+  <h3>사이즈 비교</h3>
+</div>
+
+<div class="container">
+  <div class="mysize1">
+    <p>내 사이즈</p>
+    <label for="shoulder">어깨</label><br />
+    <input type="text" id="shoulder" placeholder="입력하세용" />
+    <br /><br />
+    <label for="chest">가슴단면</label><br />
+    <input type="text" id="chest" placeholder="입력하세용" />
+    <br /><br />
+    <label for="arm">팔길이</label><br />
+    <input type="text" id="arm" placeholder="입력하세용" />
+    <br /><br />
+    <label for="length">총장</label><br />
+    <input type="text" id="length" placeholder="입력하세용" />
+  </div>
+
+  <div class="mysize2">
+    <p>쇼핑몰 사이즈</p>
+    <label for="shoulder">어깨</label><br />
+    <input type="text" id="shoulder" placeholder="입력하세용" />
+    <br /><br />
+    <label for="chest">가슴단면</label><br />
+    <input type="text" id="chest" placeholder="입력하세용" />
+    <br /><br />
+    <label for="arm">팔길이</label><br />
+    <input type="text" id="arm" placeholder="입력하세용" />
+    <br /><br />
+    <label for="length">총장</label><br />
+    <input type="text" id="length" placeholder="입력하세용" />
+  </div>
+
+  <div class="mysize3">
+    <label for="shoulder">안뇽하3숑</label><br />
+    <input type="text" id="shoulder" placeholder="입력하세용" />
+  </div>
+</div>
+<!-- 함수 추가해서 파이썬 계산, 입력칸 실수형받는 칸으로 바꾸기-->
+<!-- 상위카테고리-하위카테고리, tkinter? -->
+<br />
+
+{% endblock %}

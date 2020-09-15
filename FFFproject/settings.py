@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'accounts',
+    'closets',
+    'mysettings',
+    'sizecompares',
+    'othersclosets',
 ]
 
 MIDDLEWARE = [

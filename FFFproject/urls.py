@@ -19,11 +19,20 @@ import main.urls
 import main.views
 import accounts.urls
 import accounts.views
+import closets.urls
+import closets.views
+import mysettings.urls
+import mysettings.views
+import sizecompares.urls
+import sizecompares.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main.views.welcome, name="welcome"),
     path('main/', include('main.urls')),
     path('accounts/', include('accounts.urls')),
+    path('closets/', include('closets.urls')),
+    path('mysettings/', include('mysettings.urls')),
+    path('sizecompares/', include('sizecompares.urls')),
 ]
     

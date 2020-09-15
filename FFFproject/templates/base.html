@@ -12,7 +12,7 @@
       content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
     />
     <meta name="generator" content="Jekyll v4.1.1" />
-    <title>Carousel Template · Bootstrap</title>
+    <title>FFF</title>
 
     <link
       rel="canonical"
@@ -120,7 +120,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#"
+              <a class="nav-link" href="{% url 'mycloset' %}"
                 >내 옷장 <span class="sr-only">(current)</span></a
               >
             </li>
@@ -128,10 +128,12 @@
               <a class="nav-link" href="#">타인 옷장</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">사이즈 비교</a>
+              <a class="nav-link" href="{% url 'sizecompares' %}"
+                >사이즈 비교</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">내 설정</a>
+              <a class="nav-link" href="{% url 'mysettings' %}">내 설정</a>
             </li>
             <li class="nav-item">
               <a
@@ -139,7 +141,7 @@
                 href="#"
                 tabindex="-1"
                 aria-disabled="true"
-                >님 반갑습니다</a
+                >{{user.username}}님 반갑습니다</a
               >
             </li>
           </ul>
