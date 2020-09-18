@@ -27,6 +27,8 @@ import sizecompares.urls
 import sizecompares.views
 import othersclosets.urls
 import othersclosets.views
+import measureguides.urls
+import measureguides.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -37,5 +39,6 @@ urlpatterns = [
     path('mysettings/', include('mysettings.urls')),
     path('sizecompares/', include('sizecompares.urls')),
     path('othersclosets/', include('othersclosets.urls')),
+    path('measureguides/', include('measureguides.urls')),
 ]
     
