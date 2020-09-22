@@ -1,0 +1,240 @@
+{% extends 'base.html'%} {% block contents %}
+<style type="text/css">
+  .account_container {
+    padding: 100px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .others_title {
+    justify-content: center;
+    padding: 100px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .col-md-6 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-template-rows: repeat(auto-fit, 1fr);
+    flex-flow: row wrap;
+    align-items: center;
+    vertical-align: middle;
+  }
+
+  .follw {
+    display: inline-block;
+    margin-left: 50px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    margin-left: 80%;
+  }
+
+  .category1 {
+    display: flex;
+    justify-content: space-around;
+  }
+  .radio_button {
+    display: flex;
+    justify-content: space-around;
+  }
+  .checkbox_button {
+    display: flex;
+    justify-content: space-around;
+  }
+</style>
+<!--css다시하기-->
+
+<div class="others_title">
+  <h3>타인옷장</h3>
+</div>
+<hr />
+<!--radio button type
+<div class="radio_button">
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary active">
+      <input type="radio" name="options" id="option1" checked /> 상의
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option2" /> 하의
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option3" /> 아우터
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option4" /> 원피스
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option5" /> 악세사리
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option5" /> 신발
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option5" /> 속옷
+    </label>
+  </div>
+</div>
+<hr />
+-->
+<div class="category1">
+  <span role="button" tabindex="0">상의</span>
+  <span role="button" tabindex="0">하의</span>
+  <span role="button" tabindex="0">아우터</span>
+  <span role="button" tabindex="0">원피스</span>
+  <span role="button" tabindex="0">악세사리</span>
+  <span role="button" tabindex="0">신발</span>
+  <span role="button" tabindex="0">속옷</span>
+</div>
+<hr />
+<!--checkbox type
+<div class="checkbox_button">
+  <div class="btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary active">
+      <input type="checkbox" checked /> 상의
+    </label>
+    <label class="btn btn-secondary active">
+      <input type="checkbox" /> 하의
+    </label>
+    <label class="btn btn-secondary active">
+      <input type="checkbox" /> 아우터
+    </label>
+    <label class="btn btn-secondary active">
+      <input type="checkbox" /> 원피스
+    </label>
+    <label class="btn btn-secondary active">
+      <input type="checkbox" /> 악세사리
+    </label>
+    <label class="btn btn-secondary active">
+      <input type="checkbox" /> 신발
+    </label>
+    <label class="btn btn-secondary active">
+      <input type="checkbox" /> 속옷
+    </label>
+  </div>
+</div>
+<hr />
+<div class="category1">
+  <span type="button">상의</span> <span type="button">하의</span>
+  <span type="button">아우터</span> <span type="button">원피스</span>
+  <span type="button">악세사리</span> <span type="button">신발</span>
+  <span type="button">속옷</span>
+</div>
+<hr />-->
+<div class="category1">
+  <span type="button" tabindex="0">반팔티</span>
+  <span type="button" tabindex="0">맨투맨</span>
+  <span type="button" tabindex="0">후드티</span>
+  <span type="button" tabindex="0">레글런</span>
+  <span type="button" tabindex="0">슬리브리스</span>
+  <span type="button" tabindex="0">베스트</span>
+  <span type="button" tabindex="0">셔츠</span>
+</div>
+<hr />
+<div class="category1">
+  <span style="left: auto" text-align-left>신장</span
+  ><span type="button">140-150</span> <span type="button">150-155</span>
+  <span type="button">155-160</span> <span type="button">160-165</span>
+  <span type="button">165-170</span> <span type="button">170-175</span>
+  <span>175-180</span> <span>180-190</span><span type="button">ㅋㅋ</span
+  ><span type="button">zz</span>
+</div>
+<hr />
+<div class="category1">
+  <span>몸무게</span><span type="button">35-40</span>
+  <span type="button">40-50</span> <span type="button">50-60</span>
+  <span type="button">60-70</span> <span type="button">70-80</span>
+  <span type="button">80-90</span> <span type="button">90-100</span>
+  <span type="button">100 ~</span>
+</div>
+<hr />
+<div class="category1">
+  <span>스타일태그</span><span type="button">댄디</span>
+  <span type="button">모던</span> <span type="button">밀리터리</span>
+  <span type="button">빈티지</span> <span type="button">스트릿</span>
+  <span type="button">스포티</span> <span type="button">아메카지</span>
+  <span type="button">아방가르드</span> <span type="button">캐주얼</span>
+  <span type="button">페미닌</span>
+</div>
+<hr />
+<br />
+<br />
+<br />
+<!--여기까지 상단부-->
+
+<div class="row mb-2">
+  <div class="col-md-6">
+    <div
+      class="row no-gutters border rounded overflow-hidden shadow-sm h-md-250 position-relative"
+    >
+      <div class="col p-4">
+        <span class="box_title">하하잇</span>&nbsp;&nbsp;<span class="follow"
+          ><input type="button" value="FOLLOW11"
+        /></span>
+        <form action="">
+          <span><input type="button" value="FOLLOW22" /></span>
+        </form>
+        <h3 class="mb-0">홍길동</h3>
+        <div class="mb-1 text-muted">170cm >>70kg</div>
+        <p class="card-text mb-auto">
+          This is a wider card with supporting text below as a natural lead-in
+          to additional content.
+        </p>
+        <a href="#" class="stretched-link">Continue reading</a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        <svg
+          class="bd-placeholder-img"
+          width="200"
+          height="250"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid slice"
+          focusable="false"
+          role="img"
+          aria-label="Placeholder: Thumbnail"
+        >
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#55595c" />
+          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div
+      class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+    >
+      <div class="col p-4 d-flex flex-column position-static">
+        <strong class="d-inline-block mb-2 text-success">Design</strong>
+        <h3 class="mb-0">Post title</h3>
+        <div class="mb-1 text-muted">Nov 11</div>
+        <p class="mb-auto">
+          This is a wider card with supporting text below as a natural lead-in
+          to additional content.
+        </p>
+        <a href="#" class="stretched-link">Continue reading</a>
+      </div>
+      <div class="col-auto d-none d-lg-block">
+        <svg
+          class="bd-placeholder-img"
+          width="200"
+          height="250"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="xMidYMid slice"
+          focusable="false"
+          role="img"
+          aria-label="Placeholder: Thumbnail"
+        >
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#55595c" />
+          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

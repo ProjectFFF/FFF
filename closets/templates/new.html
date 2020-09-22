@@ -1,11 +1,69 @@
 {% extends 'base.html'%} {% block design %}
 <style type="text/css">
   .account_container {
-    padding: 100px;
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .radio_button {
     text-align: center;
     vertical-align: middle;
   }
 </style>
 {%endblock%} {% block contents %} {% include 'closet.html' %}
-<h1>new</h1>
+<!--radio button type-->
+<div class="radio_button">
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary active">
+      <input type="radio" name="options" id="option1" checked /> 상의
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option2" /> 하의
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option3" /> 아우터
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option4" /> 원피스
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option5" /> 악세사리
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option5" /> 신발
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option5" /> 속옷
+    </label>
+  </div>
+</div>
+<hr />
+<div class="radio_button">
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary active">
+      <input type="radio" name="options" id="option1" checked /> 상의
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option2" /> 하의
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option3" /> 아우터
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option4" /> 원피스
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option5" /> 악세사리
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option5" /> 신발
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option5" /> 속옷
+    </label>
+  </div>
+</div>
+<hr />
 {%endblock %}
