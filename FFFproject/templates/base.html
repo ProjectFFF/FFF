@@ -73,6 +73,10 @@
           font-size: 3.5rem;
         }
       }
+
+      .button_account {
+        justify-content: flex-end;
+      }
     </style>
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet" />
@@ -148,15 +152,17 @@
               >
             </li>
           </ul>
-          <form class="form-inline mt-2 mt-md-0">
-            <a class="btn btn-info" href="{%url 'login'%}" role="button"
-              >LogIn/SignUp</a
-            >
+          <div class="button_account">
+            <form class="form-inline mt-2 mt-md-0">
+              <a class="btn btn-info" href="{%url 'login'%}" role="button"
+                >LogIn/SignUp</a
+              >
 
-            <a class="btn btn-info" href="{%url 'login'%}" role="button"
-              >LogOut</a
-            >
-          </form>
+              <a class="btn btn-info" href="{%url 'logout'%}" role="button"
+                >LogOut</a
+              >
+            </form>
+          </div>
           <!--
             <input
               class="form-control mr-sm-2"
