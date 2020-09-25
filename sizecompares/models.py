@@ -6,3 +6,9 @@ class Compare(models.Model):
     chest_compare = models.DecimalField(max_digits=6, decimal_places=3)
     arm_compare = models.DecimalField(max_digits=6, decimal_places=3)
     total_length_compare = models.DecimalField(max_digits=6, decimal_places=3)
+
+class Result(models.Model):
+    shoulder_result = models.DecimalField(max_digits=6, decimal_places=3)
+    chest_result = models.DecimalField(max_digits=6, decimal_places=3)
+    arm_result = models.DecimalField(max_digits=6, decimal_places=3)
+    total_length_result = models.DecimalField(max_digits=6, decimal_places=3)
