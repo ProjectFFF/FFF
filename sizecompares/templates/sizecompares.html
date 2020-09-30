@@ -38,45 +38,127 @@
 <div class="compare_title">
   <h3>사이즈 비교</h3>
 </div>
-
 <div class="container">
   <div class="mysize1">
     <p>내 사이즈</p>
     <label for="shoulder">어깨</label><br />
-    <input type="text" id="shoulder" placeholder="입력하세용" />
+    <input type="text" id="shoulder1" placeholder="입력하세용" />
     <br /><br />
     <label for="chest">가슴단면</label><br />
-    <input type="text" id="chest" placeholder="입력하세용" />
+    <input type="text" id="chest1" placeholder="입력하세용" />
     <br /><br />
     <label for="arm">팔길이</label><br />
-    <input type="text" id="arm" placeholder="입력하세용" />
+    <input type="text" id="arm1" placeholder="입력하세용" />
     <br /><br />
     <label for="length">총장</label><br />
-    <input type="text" id="length" placeholder="입력하세용" />
+    <input type="text" id="length1" placeholder="입력하세용" />
   </div>
 
   <div class="mysize2">
     <p>쇼핑몰 사이즈</p>
     <label for="shoulder">어깨</label><br />
-    <input type="text" id="shoulder" placeholder="입력하세용" />
+    <input
+      type="text"
+      id="shoulder2"
+      placeholder="입력하세용"
+      onkeyup="result_shoulder()"
+    />
     <br /><br />
     <label for="chest">가슴단면</label><br />
-    <input type="text" id="chest" placeholder="입력하세용" />
+    <input
+      type="text"
+      id="chest2"
+      placeholder="입력하세용"
+      onkeyup="result_chest()"
+    />
     <br /><br />
     <label for="arm">팔길이</label><br />
-    <input type="text" id="arm" placeholder="입력하세용" />
+    <input
+      type="text"
+      id="arm2"
+      placeholder="입력하세용"
+      onkeyup="result_arm()"
+    />
     <br /><br />
     <label for="length">총장</label><br />
-    <input type="text" id="length" placeholder="입력하세용" />
+    <input
+      type="text"
+      id="length2"
+      placeholder="입력하세용"
+      onkeyup="result_length()"
+    />
   </div>
 
   <div class="mysize3">
-    <label for="shoulder">안뇽하3숑</label><br />
-    <input type="text" id="shoulder" placeholder="입력하세용" />
+    <!-- <a
+      class="btn btn-secondary"
+      href="#"
+      role="button"
+      onclick="result_shoulder();"
+      >계산하기</a
+    > -->
+    <br /><br /><br /><br />
+    <span id="sh_result">결과가 출력됩니다</span>
+    <br /><br /><br /><br />
+    <!-- <a class="btn btn-secondary" href="#" role="button">계산하기</a> -->
+    <span id="ch_result">결과가 출력됩니다</span>
+    <br /><br /><br /><br />
+    <!-- <a class="btn btn-secondary" href="#" role="button">계산하기</a> -->
+    <span id="arm_result">결과가 출력됩니다</span>
+    <br /><br /><br /><br />
+    <span id="length_result">결과가 출력됩니다</span>
   </div>
 </div>
-<!-- 함수 추가해서 파이썬 계산, 입력칸 실수형받는 칸으로 바꾸기-->
-<!-- 상위카테고리-하위카테고리, tkinter? -->
 <br />
+
+<script>
+  const shoulder1 = document.getElementById("shoulder1");
+  const shoulder2 = document.getElementById("shoulder2");
+  const sh_result = document.getElementById("sh_result");
+
+  //console.log(shoulder1);
+
+  function result_shoulder() {
+    const rs = shoulder1.value - shoulder2.value;
+    // alert("결과는! " + rs);
+    sh_result.innerHTML = rs;
+  }
+
+  const chest1 = document.getElementById("chest1");
+  const chest2 = document.getElementById("chest2");
+  const ch_result = document.getElementById("ch_result");
+
+  //console.log(shoulder1);
+
+  function result_chest() {
+    const rc = chest1.value - chest2.value;
+    // alert("결과는! " + rs);
+    ch_result.innerHTML = rc;
+  }
+
+  const arm1 = document.getElementById("arm1");
+  const arm2 = document.getElementById("arm2");
+  const arm_result = document.getElementById("arm_result");
+
+  //console.log(shoulder1);
+
+  function result_arm() {
+    const ar = arm1.value - arm2.value;
+    // alert("결과는! " + rs);
+    arm_result.innerHTML = ar;
+  }
+
+  const length1 = document.getElementById("length1");
+  const length2 = document.getElementById("length2");
+  const length_result = document.getElementById("length_result");
+
+  //console.log(shoulder1);
+
+  function result_length() {
+    const rl = length1.value - length2.value;
+    // alert("결과는! " + rs);
+    length_result.innerHTML = rl;
+  }
+</script>
 
 {% endblock %}
