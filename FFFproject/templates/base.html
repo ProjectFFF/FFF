@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -109,7 +111,17 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="{% url 'home'%}">Logo FFF</a>
+        <a class="navbar-brand" href="{% url 'home'%}">
+          <img
+            src="{% static 'logo.png' %}"
+            width="60"
+            height="30"
+            class="d-inline-block align-top"
+            alt=""
+            loading="lazy"
+          />
+        </a>
+        <a class="navbar-brand" href="{% url 'home'%}">FFF</a>
         <button
           class="navbar-toggler"
           type="button"
