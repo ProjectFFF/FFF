@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -73,6 +75,14 @@
           font-size: 3.5rem;
         }
       }
+
+      .button_account {
+        justify-content: flex-end;
+      }
+
+      .carousel-inner {
+        justify-content: center;
+      }
     </style>
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet" />
@@ -105,7 +115,17 @@
   <body>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="{% url 'home'%}">Logo FFF</a>
+        <a class="navbar-brand" href="{% url 'home'%}">
+          <img
+            src="{% static 'logo.png' %}"
+            width="60"
+            height="30"
+            class="d-inline-block align-top"
+            alt=""
+            loading="lazy"
+          />
+        </a>
+        <a class="navbar-brand" href="{% url 'home'%}">FFF</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -148,11 +168,18 @@
               >
             </li>
           </ul>
-          <form class="form-inline mt-2 mt-md-0">
-            <a class="btn btn-info" href="{%url 'login'%}" role="button"
-              >LogIn/SignUp</a
-            >
-            <!--
+          <div class="button_account">
+            <form class="form-inline mt-2 mt-md-0">
+              <a class="btn btn-info" href="{%url 'login'%}" role="button"
+                >LogIn/SignUp</a
+              >
+
+              <a class="btn btn-info" href="{%url 'logout'%}" role="button"
+                >LogOut</a
+              >
+            </form>
+          </div>
+          <!--
             <input
               class="form-control mr-sm-2"
               type="text"
@@ -163,7 +190,6 @@
               Search
             </button>
             -->
-          </form>
         </div>
       </nav>
     </header>

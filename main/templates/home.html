@@ -1,4 +1,4 @@
-{% extends 'base.html'%} {% block contents %}
+{% extends 'base.html'%} {% block contents %} {% load static%}
 <body>
   <main role="main">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -9,6 +9,8 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
+          <img src="{% static '대표페이지.jpg'%}" class="img-fluid" alt="Responsive image" />
+          <!--
           <svg
             class="bd-placeholder-img"
             width="100%"
@@ -19,8 +21,9 @@
             role="img"
           >
             <rect width="100%" height="100%" fill="#777" />
-          </svg>
+          </svg>-->
           <div class="container">
+            <!--
             <div class="carousel-caption text-left">
               <h1>Example headline.</h1>
               <p>
@@ -33,10 +36,12 @@
                   >Sign up today</a
                 >
               </p>
-            </div>
+            </div>-->
           </div>
         </div>
         <div class="carousel-item">
+          <img src="{% static '준비.png'%}" class="img-fluid" alt="Responsive image" />
+          <!--
           <svg
             class="bd-placeholder-img"
             width="100%"
@@ -47,8 +52,9 @@
             role="img"
           >
             <rect width="100%" height="100%" fill="#777" />
-          </svg>
+          </svg>-->
           <div class="container">
+            <!--
             <div class="carousel-caption">
               <h1>Another example headline.</h1>
               <p>
@@ -61,22 +67,25 @@
                   >Learn more</a
                 >
               </p>
-            </div>
+            </div>-->
           </div>
         </div>
         <div class="carousel-item">
+          <img src="{% static '준비.png'%}" class="img-fluid" alt="Responsive image" />
+          <!--
           <svg
             class="bd-placeholder-img"
             width="100%"
             height="100%"
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="https://mblogthumb-phinf.pstatic.net/MjAyMDA5MjNfMjAw/MDAxNjAwODMyOTE3OTgy.f0O8nDUrkrBvr_GsVQ6ehwWYXmB4HV9jBnP4XZlTbCog.gP50xFcU_bUGhubm7iDhnYhdj9UmcTDkzTJkeQ6zIpgg.PNG.artbank/%EC%A0%90%EA%B2%80%EC%A4%9102.png?type=w800"
             preserveAspectRatio="xMidYMid slice"
             focusable="false"
             role="img"
           >
             <rect width="100%" height="100%" fill="#777" />
-          </svg>
+          </svg>-->
           <div class="container">
+            <!--
             <div class="carousel-caption text-right">
               <h1>One more for good measure.</h1>
               <p>
@@ -89,7 +98,7 @@
                   >Browse gallery</a
                 >
               </p>
-            </div>
+            </div>-->
           </div>
         </div>
       </div>
@@ -122,25 +131,29 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
+          <img src="{% static '사람찾기안내.png'%}" width="140"
+          height="140">
+          <!--
           <svg
             class="bd-placeholder-img rounded-circle"
             width="140"
             height="140"
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="{% static '사람찾기안내.png'%}"
             preserveAspectRatio="xMidYMid slice"
             focusable="false"
             role="img"
             aria-label="Placeholder: 140x140"
-          >
+          >-->
             <title>Placeholder</title>
             <rect width="100%" height="100%" fill="#777" />
-            <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+            <text x="50%" y="50%" fill="#777" dy=".3em"></text>
           </svg>
-          <h2>나와 비슷한 체형의 사람 찾기</h2>
+          <h2>유사 체형의 사람 찾기</h2>
           <p>
             Can I find someone with a body type similar to me? You can click the
             button to checkout
           </p>
+          <br>
           <p>
             <a
               class="btn btn-secondary"
@@ -152,6 +165,9 @@
         </div>
         <!-- /.col-lg-4 -->
         <div class="col-lg-4">
+          <img src="{% static '옷비교안내.png'%}" width="140"
+          height="140">
+          <!--
           <svg
             class="bd-placeholder-img rounded-circle"
             width="140"
@@ -161,16 +177,17 @@
             focusable="false"
             role="img"
             aria-label="Placeholder: 140x140"
-          >
+          >-->
             <title>Placeholder</title>
             <rect width="100%" height="100%" fill="#777" />
-            <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+            <text x="50%" y="50%" fill="#777" dy=".3em"></text>
           </svg>
           <h2>사이즈 비교하기</h2>
           <p>
             Let’s compare my body size and the size of the clothes I want to
             buy.
           </p>
+          <br>
           <p>
             <a
               class="btn btn-secondary"
@@ -182,6 +199,9 @@
         </div>
         <!-- /.col-lg-4 -->
         <div class="col-lg-4">
+          <img src="{% static '사이즈측정안내.png'%}" width="140"
+          height="140">
+          <!--
           <svg
             class="bd-placeholder-img rounded-circle"
             width="140"
@@ -191,18 +211,22 @@
             focusable="false"
             role="img"
             aria-label="Placeholder: 140x140"
-          >
+          >-->
             <title>Placeholder</title>
             <rect width="100%" height="100%" fill="#777" />
-            <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+            <text x="50%" y="50%" fill="#777" dy=".3em"></text>
           </svg>
           <h2>사이즈 측정 안내</h2>
           <p>
             To buy clothes that suit you well, you must first know your body
             size.
           </p>
+          <br>
           <p>
-            <a class="btn btn-secondary" href="#" role="button"
+            <a
+              class="btn btn-secondary"
+              href="{% url 'measureguides' %}"
+              role="button"
               >측정하기 &raquo;</a
             >
           </p>
@@ -212,7 +236,7 @@
       <!-- /.row -->
 
       <!-- START THE FEATURETTES -->
-
+      
       <hr class="featurette-divider" />
 
       <div class="row featurette">
