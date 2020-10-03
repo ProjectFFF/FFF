@@ -16,12 +16,12 @@ def mycloset(request):
 
 def create(request): #입력 내용 데이터베이스에 넣어줌
     cloth= Newcloth()
-    cloth.name= request.GET['cloth_name']
+    cloth.cloth_name= request.GET['cloth_name']
     cloth.shoulder= request.GET['shoulder']
     cloth.chest= request.GET['chest']
     cloth.arm= request.GET['arm']
-    cloth.length= request.GET['total_length']
-    cloth.length= request.GET['image']
+    cloth.total_length= request.GET['total_length']
+    cloth.image= request.GET['image']
     cloth.save()
     return render(request, 'record.html')
 
