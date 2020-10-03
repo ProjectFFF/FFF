@@ -13,6 +13,10 @@
         {% for record in records.all %}
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+            <p class="card-text">
+              {{record.cloth_name}}
+            </p></div>
             <img src="{{record.image.url}}"width="100%">
             <!--
             <svg
@@ -32,19 +36,16 @@
             -->
             <div class="card-body">
               <p class="card-text">
-                {{record.cloth_name}}
+                어깨 길이 - {{record.shoulder}}
               </p>
               <p class="card-text">
-                {{record.shoulder}}
+                가슴단면 - {{record.chest}}
               </p>
               <p class="card-text">
-                {{record.chest}}
+                팔 길이 - {{record.arm}}
               </p>
               <p class="card-text">
-                {{record.arm}}
-              </p>
-              <p class="card-text">
-                {{record.total_length}}
+                총장 - {{record.total_length}}
               </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
