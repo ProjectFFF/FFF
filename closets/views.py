@@ -21,7 +21,8 @@ def create(request): #입력 내용 데이터베이스에 넣어줌
     cloth.chest= request.GET['chest']
     cloth.arm= request.GET['arm']
     cloth.length= request.GET['total_length']
-    cloth.save() #데이터베이스에 저장해라
+    cloth.length= request.GET['image']
+    cloth.save()
     return render(request, 'record.html')
 
 def newcloth(request):

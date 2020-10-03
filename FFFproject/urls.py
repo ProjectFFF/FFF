@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 import main.urls
 import main.views
 import accounts.urls
@@ -40,5 +42,5 @@ urlpatterns = [
     path('sizecompares/', include('sizecompares.urls')),
     path('othersclosets/', include('othersclosets.urls')),
     path('measureguides/', include('measureguides.urls')),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     
