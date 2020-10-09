@@ -32,6 +32,19 @@
     grid-column-end: 5;
     grid-row-start: 2;
     grid-row-end: 3;
+    transition: color 0.5s ease-in-out;
+  }
+  #sh_result {
+    transition: color 0.5s ease-in-out;
+  }
+  #ch_result {
+    transition: color 0.5s ease-in-out;
+  }
+  #arm_result {
+    transition: color 0.5s ease-in-out;
+  }
+  #length_result {
+    transition: color 0.5s ease-in-out;
   }
 </style>
 
@@ -97,16 +110,33 @@
       onclick="result_shoulder();"
       >계산하기</a
     > -->
+    <p>비교값</p>
+    <label>　</label><br />
+    <span id="sh_result">결과가 출력됩니다</span>
+    <br /><br />
+    <label>　</label><br />
+    <span id="ch_result">결과가 출력됩니다</span>
+    <br /><br />
+    <label>　</label><br />
+    <span id="arm_result">결과가 출력됩니다</span>
+    <br /><br />
+    <label>　</label><br />
+    <span id="length_result">결과가 출력됩니다</span>
+    <br /><br />
+
+    <!--
     <br /><br /><br /><br />
     <span id="sh_result">결과가 출력됩니다</span>
-    <br /><br /><br /><br />
+    <br /><br /><br /><br />-->
     <!-- <a class="btn btn-secondary" href="#" role="button">계산하기</a> -->
+    <!--
     <span id="ch_result">결과가 출력됩니다</span>
-    <br /><br /><br /><br />
+    <br /><br /><br /><br />-->
     <!-- <a class="btn btn-secondary" href="#" role="button">계산하기</a> -->
+    <!--
     <span id="arm_result">결과가 출력됩니다</span>
     <br /><br /><br /><br />
-    <span id="length_result">결과가 출력됩니다</span>
+    <span id="length_result">결과가 출력됩니다</span>-->
   </div>
 </div>
 <br />
@@ -162,7 +192,7 @@
     } else if (rc < 0) {
       ch_result.style.color = NEGATIVE_COLOR;
     } else {
-      sch_result.style.color = BASE_COLOR;
+      ch_result.style.color = BASE_COLOR;
     }
   }
 
