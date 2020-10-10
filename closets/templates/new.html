@@ -75,7 +75,8 @@
   </div>
   <hr />
   <div class="new_cloth">
-    <form action="{% url 'create' %}">
+    <form action="{% url 'create' %}" enctype="multipart/form-data" method = "POST">
+      {% csrf_token %}
       <h4>옷명칭</h4>
       <input type="text" name="cloth_name" />
       <br />
