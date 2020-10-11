@@ -8,21 +8,22 @@ def new(request):
     return render(request, 'new.html')
 
 def record(request):
-    return render(request, 'record.html')
+    records = Newcloth.objects
+    return render(request, 'record.html', {'records':records})
 
 def mycloset(request):
     return render(request, 'mycloset.html')
 
 def create(request): #입력 내용 데이터베이스에 넣어줌
     cloth= Newcloth()
-    cloth.name= request.GET['cloth_name']
-    cloth.shoulder= request.GET['shoulder']
-    cloth.chest= request.GET['chest']
-    cloth.arm= request.GET['arm']
-    cloth.length= request.GET['total_length']
-    cloth.image = request.GET['image']
-    cloth.save() #데이터베이스에 저장해라
-    return redirect('/cloth/'+str(cloth.id))
+    cloth.cloth_name= request.POST['cloth_name']
+    cloth.shoulder= request.POST['shoulder']
+    cloth.chest= request.POST['chest']
+    cloth.arm= request.POST['arm']
+    cloth.total_length= request.POST['total_length']
+    cloth.image= request.FILES['image']
+    cloth.save()
+    return render(request, 'record.html')
 
 def newcloth(request):
     #입력된 내용을 처리 기능 -> POST

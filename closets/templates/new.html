@@ -75,12 +75,13 @@
   </div>
   <hr />
   <div class="new_cloth">
-    <form action="{% url 'create' %}">
+    <form action="{% url 'create' %}" enctype="multipart/form-data" method = "POST">
+      {% csrf_token %}
       <h4>옷명칭</h4>
       <input type="text" name="cloth_name" />
       <br />
       <br />
-      <h4>어깨</h4>
+      <h4>어깨길이</h4>
       <input type="text" name="shoulder" />
       <br />
       <br />
@@ -96,7 +97,22 @@
       <input type="text" name="total_length" />
       <br />
       <br />
+      <h4>사진첨부</h4>
+      <input type="file" name="image" />
+      <br />
+      <br />
+      <!--
+      <a
+        href="#"
+        class="btn btn-secondary btn-lg active"
+        role="button"
+        aria-pressed="true"
+        >입력</a
+      >
+      -->
+
       <input class="btn btn-dark" type="submit" value="입력" />
+
       <br />
       <br />
     </form>
@@ -112,5 +128,17 @@
       <input class="btn btn-dark" type="submit" value="제출하기" />
     </form>
   </div>-->
+  <hr>
 </div>
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+      Find Fine Fit! &copy; 2020 FFF. &middot;
+      <a href="https://github.com/ProjectFFF/FFF">GitHub</a> &middot;
+      <a href="https://choosealicense.com/licenses/bsd-2-clause/">License</a>
+    </p>
+  </div>
+</footer>
 {%endblock %}

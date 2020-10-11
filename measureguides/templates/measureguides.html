@@ -1,4 +1,4 @@
-{% extends 'base.html'%} {% block contents %}
+{% extends 'base.html'%} {% block contents %} {% load static %}
 <style type="text/css">
     .account_container {
       padding: 100px;
@@ -53,27 +53,35 @@
   <hr />
   
   <div class="category1">
-    <span role="button" tabindex="0">상의</span>
-    <span role="button" tabindex="0">하의</span>
-    <span role="button" tabindex="0">아우터</span>
+    <span role="button" tabindex="0">긴팔티</span>
+    <span role="button" tabindex="0">바지</span>
+    <span role="button" tabindex="0">점퍼</span>
     <span role="button" tabindex="0">원피스</span>
-    <span role="button" tabindex="0">악세사리</span>
-    <span role="button" tabindex="0">신발</span>
-    <span role="button" tabindex="0">속옷</span>
+    <span role="button" tabindex="0">치마</span>
+    <span role="button" tabindex="0">코트</span>
   </div>
   <hr />
  
   <div class="category1">
     <span type="button" tabindex="0">반팔티</span>
-    <span type="button" tabindex="0">맨투맨</span>
+    <span type="button" tabindex="0">후드집업</span>
     <span type="button" tabindex="0">후드티</span>
     <span type="button" tabindex="0">레글런</span>
     <span type="button" tabindex="0">슬리브리스</span>
-    <span type="button" tabindex="0">베스트</span>
     <span type="button" tabindex="0">셔츠</span>
   </div>
   <hr />
-  <!--
+  {% for guide in guides %}
+  <div class="category1">
+    <span type="button" tabindex="0" href="">{{guide.guide_name}}</span> 
+    <!-- detail page 를 활용해 pk마다 해당하는 이미지 보여주게 만들 예정-->
+    
+    <!--url 제대로 작동
+    <img src="{{guide.guide_image.url}}" class="img-fluid" alt="인식 불가">
+    -->
+  </div>
+  {% endfor %}
+  <!-- 
   <div class="category1">
     <span style="left: auto" text-align-left>신장</span
     ><span type="button">140-150</span> <span type="button">150-155</span>
@@ -104,12 +112,12 @@
   <br />
   <br />
   <!--여기까지 상단부-->
-  <div class="jumbotron">
-    <h1 class="display-4">Hello, world!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-    <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Fluid jumbotron</h1>
+      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+      <img src="{% static '긴팔티.png' %}" class="img-fluid" alt="Responsive image">
+    </div>
   </div>
   <!--
   <div class="row mb-2">

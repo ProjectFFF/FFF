@@ -32,6 +32,19 @@
     grid-column-end: 5;
     grid-row-start: 2;
     grid-row-end: 3;
+    transition: color 0.5s ease-in-out;
+  }
+  #sh_result {
+    transition: color 0.5s ease-in-out;
+  }
+  #ch_result {
+    transition: color 0.5s ease-in-out;
+  }
+  #arm_result {
+    transition: color 0.5s ease-in-out;
+  }
+  #length_result {
+    transition: color 0.5s ease-in-out;
   }
 </style>
 
@@ -97,16 +110,33 @@
       onclick="result_shoulder();"
       >계산하기</a
     > -->
+    <p>비교값</p>
+    <label>　</label><br />
+    <span id="sh_result">결과가 출력됩니다</span>
+    <br /><br />
+    <label>　</label><br />
+    <span id="ch_result">결과가 출력됩니다</span>
+    <br /><br />
+    <label>　</label><br />
+    <span id="arm_result">결과가 출력됩니다</span>
+    <br /><br />
+    <label>　</label><br />
+    <span id="length_result">결과가 출력됩니다</span>
+    <br /><br />
+
+    <!--
     <br /><br /><br /><br />
     <span id="sh_result">결과가 출력됩니다</span>
-    <br /><br /><br /><br />
+    <br /><br /><br /><br />-->
     <!-- <a class="btn btn-secondary" href="#" role="button">계산하기</a> -->
+    <!--
     <span id="ch_result">결과가 출력됩니다</span>
-    <br /><br /><br /><br />
+    <br /><br /><br /><br />-->
     <!-- <a class="btn btn-secondary" href="#" role="button">계산하기</a> -->
+    <!--
     <span id="arm_result">결과가 출력됩니다</span>
     <br /><br /><br /><br />
-    <span id="length_result">결과가 출력됩니다</span>
+    <span id="length_result">결과가 출력됩니다</span>-->
   </div>
 </div>
 <br />
@@ -115,6 +145,9 @@
   const shoulder1 = document.getElementById("shoulder1");
   const shoulder2 = document.getElementById("shoulder2");
   const sh_result = document.getElementById("sh_result");
+  const POSITIVE_COLOR = "#3498db";
+  const NEGATIVE_COLOR = "#e74c3c";
+  const BASE_COLOR = "#1e272e";
 
   //console.log(shoulder1);
 
@@ -122,8 +155,28 @@
     const rs = shoulder1.value - shoulder2.value;
     // alert("결과는! " + rs);
     sh_result.innerHTML = rs;
+    if (rs > 0) {
+      sh_result.style.color = POSITIVE_COLOR;
+    } else if (rs < 0) {
+      sh_result.style.color = NEGATIVE_COLOR;
+    } else {
+      sh_result.style.color = BASE_COLOR;
+    }
   }
 
+  /*
+  function result_shoulder_color() {
+    const rs = shoulder1.value - shoulder2.value;
+    if (rs > 0) {
+      sh_result.style.color = POSITIVE_COLOR;
+    } else if (rs < 0) {
+      sh_result.style.color = NEGATIVE_COLOR;
+    } else {
+      sh_result.style.color = BASE_COLOR;
+    }
+  }
+  result_shoulder_color();
+*/
   const chest1 = document.getElementById("chest1");
   const chest2 = document.getElementById("chest2");
   const ch_result = document.getElementById("ch_result");
@@ -134,6 +187,13 @@
     const rc = chest1.value - chest2.value;
     // alert("결과는! " + rs);
     ch_result.innerHTML = rc;
+    if (rc > 0) {
+      ch_result.style.color = POSITIVE_COLOR;
+    } else if (rc < 0) {
+      ch_result.style.color = NEGATIVE_COLOR;
+    } else {
+      ch_result.style.color = BASE_COLOR;
+    }
   }
 
   const arm1 = document.getElementById("arm1");
@@ -146,6 +206,13 @@
     const ar = arm1.value - arm2.value;
     // alert("결과는! " + rs);
     arm_result.innerHTML = ar;
+    if (ar > 0) {
+      arm_result.style.color = POSITIVE_COLOR;
+    } else if (ar < 0) {
+      arm_result.style.color = NEGATIVE_COLOR;
+    } else {
+      arm_result.style.color = BASE_COLOR;
+    }
   }
 
   const length1 = document.getElementById("length1");
@@ -158,6 +225,13 @@
     const rl = length1.value - length2.value;
     // alert("결과는! " + rs);
     length_result.innerHTML = rl;
+    if (rl > 0) {
+      length_result.style.color = POSITIVE_COLOR;
+    } else if (rl < 0) {
+      length_result.style.color = NEGATIVE_COLOR;
+    } else {
+      length_result.style.color = BASE_COLOR;
+    }
   }
 </script>
 
