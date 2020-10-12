@@ -53,34 +53,35 @@
   <hr />
   
   <div class="category1">
-    <span role="button" tabindex="0">긴팔티</span>
-    <span role="button" tabindex="0">바지</span>
-    <span role="button" tabindex="0">점퍼</span>
-    <span role="button" tabindex="0">원피스</span>
-    <span role="button" tabindex="0">치마</span>
-    <span role="button" tabindex="0">코트</span>
+    <span role="button" tabindex="0" id="btn1">긴팔티</span>
+    <span role="button" tabindex="0" id="btn2">바지</span>
+    <span role="button" tabindex="0" id="btn3">점퍼</span>
+    <span role="button" tabindex="0" id="btn4">원피스</span>
+    <span role="button" tabindex="0" id="btn5">치마</span>
+    <span role="button" tabindex="0" id="btn6">코트</span>
   </div>
   <hr />
  
   <div class="category1">
-    <span type="button" tabindex="0">반팔티</span>
-    <span type="button" tabindex="0">후드집업</span>
-    <span type="button" tabindex="0">후드티</span>
-    <span type="button" tabindex="0">레글런</span>
-    <span type="button" tabindex="0">슬리브리스</span>
-    <span type="button" tabindex="0">셔츠</span>
+    <span type="button" tabindex="0" id="btn7">반팔티</span>
+    <span type="button" tabindex="0" id="btn8">후드집업</span>
+    <span type="button" tabindex="0" id="btn9">후드티</span>
+    <span type="button" tabindex="0" id="btn10">레글런</span>
+    <span type="button" tabindex="0" id="btn11">슬리브리스</span>
+    <span type="button" tabindex="0" id="btn12">셔츠</span>
   </div>
   <hr />
+  <!--
   {% for guide in guides %}
   <div class="category1">
-    <span type="button" tabindex="0" href="">{{guide.guide_name}}</span> 
+    <span type="button" tabindex="0" href="">{{guide.guide_name}}</span>--> 
     <!-- detail page 를 활용해 pk마다 해당하는 이미지 보여주게 만들 예정-->
     
     <!--url 제대로 작동
     <img src="{{guide.guide_image.url}}" class="img-fluid" alt="인식 불가">
     -->
-  </div>
-  {% endfor %}
+  <!--</div>
+  {% endfor %}-->
   <!-- 
   <div class="category1">
     <span style="left: auto" text-align-left>신장</span
@@ -114,82 +115,104 @@
   <!--여기까지 상단부-->
   <div class="jumbotron jumbotron-fluid">
     <div class="container">
-      <h1 class="display-4">Fluid jumbotron</h1>
-      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-      <img src="{% static '긴팔티.png' %}" class="img-fluid" alt="Responsive image">
+      <h1 class="display-4" id="title">사이즈 측정 방법</h1>
+      <p class="lead" id="description">다양한 종류의 옷 치수를 재기 위한 방법을 소개합니다.</p>
+      <img src="{% static '긴팔티.png' %}" class="img-fluid" id="guide" alt="Responsive image" width="500" height="500
+      ">
     </div>
   </div>
-  <!--
-  <div class="row mb-2">
-    <div class="col-md-6">
-      <div
-        class="row no-gutters border rounded overflow-hidden shadow-sm h-md-250 position-relative"
-      >
-        <div class="col p-4">
-          <span class="box_title">하하잇</span>&nbsp;&nbsp;<span class="follow"
-            ><input type="button" value="FOLLOW11"
-          /></span>
-          <form action="">
-            <span><input type="button" value="FOLLOW22" /></span>
-          </form>
-          <h3 class="mb-0">홍길동</h3>
-          <div class="mb-1 text-muted">170cm >>70kg</div>
-          <p class="card-text mb-auto">
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content.
-          </p>
-          <a href="#" class="stretched-link">Continue reading</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <svg
-            class="bd-placeholder-img"
-            width="200"
-            height="250"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="xMidYMid slice"
-            focusable="false"
-            role="img"
-            aria-label="Placeholder: Thumbnail"
-          >
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#55595c" />
-            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-          </svg>
-        </div>
-      </div>
-    </div>
-  
-    <div class="col-md-6">
-      <div
-        class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
-      >
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-success">Design</strong>
-          <h3 class="mb-0">Post title</h3>
-          <div class="mb-1 text-muted">Nov 11</div>
-          <p class="mb-auto">
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content.
-          </p>
-          <a href="#" class="stretched-link">Continue reading</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <svg
-            class="bd-placeholder-img"
-            width="200"
-            height="250"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="xMidYMid slice"
-            focusable="false"
-            role="img"
-            aria-label="Placeholder: Thumbnail"
-          >
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#55595c" />
-            <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
-          </svg>
-        </div>
-      </div>
-    </div>-->
   </div>
+
+<script>
+  const btn1 = document.querySelector("#btn1");
+  const btn2 = document.querySelector("#btn2");
+  const btn3 = document.querySelector("#btn3");
+  const btn4 = document.querySelector("#btn4");
+  const btn5 = document.querySelector("#btn5");
+  const btn6 = document.querySelector("#btn6");
+  const btn7 = document.querySelector("#btn7");
+  const btn8 = document.querySelector("#btn8");
+  const btn9 = document.querySelector("#btn9");
+  const btn10 = document.querySelector("#btn10");
+  const btn11 = document.querySelector("#btn11");
+  const btn12 = document.querySelector("#btn12");
+
+  function Click1() {
+    document.getElementById("guide").src="{% static '긴팔티.png' %}"
+    console.log("긴팔티");
+  }
+
+  function Click2() {
+    document.getElementById("guide").src="{% static '바지.png' %}"
+    console.log("바지");
+  }
+
+  function Click3() {
+    document.getElementById("guide").src="{% static '점퍼.png' %}"
+    console.log("점퍼");
+  }
+
+  function Click4() {
+    document.getElementById("guide").src="{% static '원피스.png' %}"
+    console.log("원피스");
+  }
+
+  function Click5() {
+    document.getElementById("guide").src="{% static '치마.png' %}"
+    console.log("치마");
+  }
+
+  function Click6() {
+    document.getElementById("guide").src="{% static '코트.png' %}"
+    console.log("코트");
+  }
+
+  function Click7() {
+    document.getElementById("guide").src="{% static '반팔티.png' %}"
+    console.log("반팔티");
+  }
+
+  function Click8() {
+    document.getElementById("guide").src="{% static '후드집업.png' %}"
+    console.log("후드집업");
+  }
+
+  function Click9() {
+    document.getElementById("guide").src="{% static '후드티.png' %}"
+    console.log("후드티");
+  }
+
+  function Click10() {
+    document.getElementById("guide").src="{% static '레글런.png' %}"
+    console.log("레글런");
+  }
+
+  function Click11() {
+    document.getElementById("guide").src="{% static '슬리브리스.png' %}"
+    console.log("슬리브리스");
+  }
+
+  function Click12() {
+    document.getElementById("guide").src="{% static '셔츠.png' %}"
+    console.log("셔츠");
+  }
+
+  function init() {
+    btn1.addEventListener("click", Click1);
+    btn2.addEventListener("click", Click2);
+    btn3.addEventListener("click", Click3);
+    btn4.addEventListener("click", Click4);
+    btn5.addEventListener("click", Click5);
+    btn6.addEventListener("click", Click6);
+    btn7.addEventListener("click", Click7);
+    btn8.addEventListener("click", Click8);
+    btn9.addEventListener("click", Click9);
+    btn10.addEventListener("click", Click10);
+    btn11.addEventListener("click", Click11);
+    btn12.addEventListener("click", Click12);
+  }
+
+  init();
+</script>
+
 {% endblock %}
