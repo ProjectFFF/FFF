@@ -8,8 +8,15 @@ class Newcloth(models.Model):
     chest = models.DecimalField(max_digits=6, decimal_places=3)
     arm = models.DecimalField(max_digits=6, decimal_places=3)
     total_length = models.DecimalField(max_digits=6, decimal_places=3)
-    image = models.ImageField(upload_to='images/')
-   
+    image = models.ImageField(upload_to='images/', blank=True, null=True)
+    shopping_link = models.CharField(max_length=255, blank=True, null=True)
+    tag = models.CharField(max_length=255, blank=True, null=True)
+    review = models.CharField(max_length=255, blank=True, null=True)
+    pub_date = models.DateTimeField('date published', blank=True, null=True)
 
     def __str__(self):
         return self.cloth_name
+
+# class Photocloset(models.Model):
+    # newcloth = models.ForeignKey(Newcloth, on_delete=models.CASCADE, null=True)
+    # addimage = models.ImageField(upload_to='images/', blank=True, null=True)

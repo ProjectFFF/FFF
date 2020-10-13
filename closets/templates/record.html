@@ -52,8 +52,9 @@
                   <button
                     type="button"
                     class="btn btn-sm btn-outline-secondary"
+                    href="{%url 'detail'%}"
                   >
-                    자세히
+                    옷장등록
                   </button>
                   <button
                     type="button"
@@ -61,8 +62,14 @@
                   >
                     수정
                   </button>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                  >
+                    비교
+                  </button>
                 </div>
-                <small class="text-muted">9 mins</small>
+                <small class="text-muted">{{record.pub_date}}</small>
               </div>
             </div>
           </div>

@@ -14,6 +14,9 @@ def record(request):
 def mycloset(request):
     return render(request, 'mycloset.html')
 
+def detail(request):
+    return render(request, 'detail.html')
+
 def create(request): #입력 내용 데이터베이스에 넣어줌
     cloth= Newcloth()
     cloth.cloth_name= request.POST['cloth_name']
@@ -22,6 +25,7 @@ def create(request): #입력 내용 데이터베이스에 넣어줌
     cloth.arm= request.POST['arm']
     cloth.total_length= request.POST['total_length']
     cloth.image= request.FILES['image']
+    cloth.pub_date = timezone.datetime.now()
     cloth.save()
     return render(request, 'record.html')
 
