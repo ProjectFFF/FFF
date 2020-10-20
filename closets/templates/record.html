@@ -54,7 +54,7 @@
                     class="btn btn-sm btn-outline-secondary"
                     href="{%url 'detail'%}"
                   >
-                    옷장등록
+                    등록
                   </button>
                   <button
                     type="button"
@@ -66,11 +66,19 @@
                     type="button"
                     class="btn btn-sm btn-outline-secondary"
                   >
+                    제거
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                  >
                     비교
                   </button>
                 </div>
-                <small class="text-muted">{{record.pub_date}}</small>
+                
               </div>
+              <br>
+              <small class="text-muted">{{record.pub_date}}</small>
             </div>
           </div>
         </div>
