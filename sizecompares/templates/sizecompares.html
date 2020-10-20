@@ -155,28 +155,29 @@
     const rs = shoulder1.value - shoulder2.value;
     // alert("결과는! " + rs);
     sh_result.innerHTML = rs;
-    if (rs > 0) {
+    if (-3 <= rs && rs <= 3) {
       sh_result.style.color = POSITIVE_COLOR;
-    } else if (rs < 0) {
-      sh_result.style.color = NEGATIVE_COLOR;
     } else {
-      sh_result.style.color = BASE_COLOR;
+      sh_result.style.color = NEGATIVE_COLOR;
     }
+    //  else {
+    // sh_result.style.color = BASE_COLOR;
+    // }
   }
 
   /*
-  function result_shoulder_color() {
-    const rs = shoulder1.value - shoulder2.value;
-    if (rs > 0) {
-      sh_result.style.color = POSITIVE_COLOR;
-    } else if (rs < 0) {
-      sh_result.style.color = NEGATIVE_COLOR;
-    } else {
-      sh_result.style.color = BASE_COLOR;
+    function result_shoulder_color() {
+      const rs = shoulder1.value - shoulder2.value;
+      if (rs > 0) {
+        sh_result.style.color = POSITIVE_COLOR;
+      } else if (rs < 0) {
+        sh_result.style.color = NEGATIVE_COLOR;
+      } else {
+        sh_result.style.color = BASE_COLOR;
+      }
     }
-  }
-  result_shoulder_color();
-*/
+    result_shoulder_color();
+  */
   const chest1 = document.getElementById("chest1");
   const chest2 = document.getElementById("chest2");
   const ch_result = document.getElementById("ch_result");
@@ -187,13 +188,14 @@
     const rc = chest1.value - chest2.value;
     // alert("결과는! " + rs);
     ch_result.innerHTML = rc;
-    if (rc > 0) {
+    if (-3 <= rc && rc <= 3) {
       ch_result.style.color = POSITIVE_COLOR;
-    } else if (rc < 0) {
-      ch_result.style.color = NEGATIVE_COLOR;
     } else {
-      ch_result.style.color = BASE_COLOR;
+      ch_result.style.color = NEGATIVE_COLOR;
     }
+    //  else {
+    // ch_result.style.color = BASE_COLOR;
+    // }
   }
 
   const arm1 = document.getElementById("arm1");
@@ -206,13 +208,14 @@
     const ar = arm1.value - arm2.value;
     // alert("결과는! " + rs);
     arm_result.innerHTML = ar;
-    if (ar > 0) {
+    if (-3 <= ar && ar <= 3) {
       arm_result.style.color = POSITIVE_COLOR;
-    } else if (ar < 0) {
-      arm_result.style.color = NEGATIVE_COLOR;
     } else {
-      arm_result.style.color = BASE_COLOR;
+      arm_result.style.color = NEGATIVE_COLOR;
     }
+    // else {
+    // arm_result.style.color = BASE_COLOR;
+    // }
   }
 
   const length1 = document.getElementById("length1");
@@ -225,13 +228,16 @@
     const rl = length1.value - length2.value;
     // alert("결과는! " + rs);
     length_result.innerHTML = rl;
-    if (rl > 0) {
+    if (-3 <= rl && rl <= 3) {
       length_result.style.color = POSITIVE_COLOR;
-    } else if (rl < 0) {
-      length_result.style.color = NEGATIVE_COLOR;
+      console.log("적합");
     } else {
-      length_result.style.color = BASE_COLOR;
+      length_result.style.color = NEGATIVE_COLOR;
+      console.log("부적합");
     }
+    //  else {
+    // length_result.style.color = BASE_COLOR;
+    // }
   }
 </script>
 
