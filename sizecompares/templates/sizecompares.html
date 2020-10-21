@@ -152,7 +152,8 @@
   //console.log(shoulder1);
 
   function result_shoulder() {
-    const rs = shoulder1.value - shoulder2.value;
+    const f_rs = shoulder1.value - shoulder2.value;
+    const rs = f_rs.toFixed(3);
     // alert("결과는! " + rs);
     sh_result.innerHTML = rs;
     if (-3 <= rs && rs <= 3) {
@@ -185,7 +186,8 @@
   //console.log(shoulder1);
 
   function result_chest() {
-    const rc = chest1.value - chest2.value;
+    const f_rc = chest1.value - chest2.value;
+    const rc = f_rc.toFixed(3);
     // alert("결과는! " + rs);
     ch_result.innerHTML = rc;
     if (-3 <= rc && rc <= 3) {
@@ -205,7 +207,8 @@
   //console.log(shoulder1);
 
   function result_arm() {
-    const ar = arm1.value - arm2.value;
+    const f_ar = arm1.value - arm2.value;
+    const ar = f_ar.toFixed(3);
     // alert("결과는! " + rs);
     arm_result.innerHTML = ar;
     if (-3 <= ar && ar <= 3) {
@@ -225,7 +228,8 @@
   //console.log(shoulder1);
 
   function result_length() {
-    const rl = length1.value - length2.value;
+    const f_rl = length1.value - length2.value;
+    const rl = f_rl.toFixed(3);
     // alert("결과는! " + rs);
     length_result.innerHTML = rl;
     if (-3 <= rl && rl <= 3) {
