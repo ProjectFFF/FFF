@@ -1,0 +1,276 @@
+{% extends 'base.html'%} {% block contents %}
+<style type="text/css">
+  .compare_title {
+    padding: 100px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-template-rows: repeat(auto-fit, 1fr);
+    flex-flow: row wrap;
+    align-items: center;
+    vertical-align: middle;
+  }
+
+  .mysize1 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .mysize2 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
+  .mysize3 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    transition: color 0.5s ease-in-out;
+  }
+  #sh_result {
+    transition: color 0.5s ease-in-out;
+  }
+  #ch_result {
+    transition: color 0.5s ease-in-out;
+  }
+  #arm_result {
+    transition: color 0.5s ease-in-out;
+  }
+  #length_result {
+    transition: color 0.5s ease-in-out;
+  }
+</style>
+
+<div class="compare_title">
+  <h3>"{{record.cloth_name}}" 사이즈 비교</h3>
+</div>
+<div class="container">
+  <div class="mysize1">
+    <p>내 사이즈</p>
+    <label for="shoulder">어깨</label><br />
+    <input
+      type="text"
+      id="shoulder1"
+      placeholder="입력하세용"
+      onkeyup="result_shoulder()"
+    />
+    <br /><br />
+    <label for="chest">가슴단면</label><br />
+    <input
+      type="text"
+      id="chest1"
+      placeholder="입력하세용"
+      onkeyup="result_chest()"
+    />
+    <br /><br />
+    <label for="arm">팔길이</label><br />
+    <input type="text" id="arm1" placeholder="입력하세용"
+    onkeyup="result_arm()"" />
+    <br /><br />
+    <label for="length">총장</label><br />
+    <input
+      type="text"
+      id="length1"
+      placeholder="입력하세용"
+      onkeyup="result_length()"
+    />
+  </div>
+
+  <div class="mysize2">
+    <p>쇼핑몰 사이즈</p>
+    <label for="shoulder">어깨</label><br />
+    <p id="shoulder2">{{record.shoulder}}</p>
+    <!--
+    <input
+      type="text"
+      id="shoulder2"
+      placeholder="입력하세용"
+      onkeyup="result_shoulder()"
+    />-->
+    <br />
+    <label for="chest">가슴단면</label><br />
+    <p id="chest2">{{record.chest}}</p>
+    <!--
+    <input
+      type="text"
+      id="chest2"
+      placeholder="입력하세용"
+      onkeyup="result_chest()"
+    />-->
+    <br />
+    <label for="arm">팔길이</label><br />
+    <p id="arm2">{{record.arm}}</p>
+    <!--
+    <input
+      type="text"
+      id="arm2"
+      placeholder="입력하세용"
+      onkeyup="result_arm()"
+    />-->
+    <br />
+    <label for="length">총장</label><br />
+    <p id="length2">{{record.total_length}}</p>
+    <!--
+    <input
+      type="text"
+      id="length2"
+      placeholder="입력하세용"
+      onkeyup="result_length()"
+    />-->
+  </div>
+
+  <div class="mysize3">
+    <!-- <a
+      class="btn btn-secondary"
+      href="#"
+      role="button"
+      onclick="result_shoulder();"
+      >계산하기</a
+    > -->
+    <p>비교값</p>
+    <label>　</label><br />
+    <span id="sh_result">결과가 출력됩니다</span>
+    <br /><br />
+    <label>　</label><br />
+    <span id="ch_result">결과가 출력됩니다</span>
+    <br /><br />
+    <label>　</label><br />
+    <span id="arm_result">결과가 출력됩니다</span>
+    <br /><br />
+    <label>　</label><br />
+    <span id="length_result">결과가 출력됩니다</span>
+    <br /><br />
+
+    <!--
+    <br /><br /><br /><br />
+    <span id="sh_result">결과가 출력됩니다</span>
+    <br /><br /><br /><br />-->
+    <!-- <a class="btn btn-secondary" href="#" role="button">계산하기</a> -->
+    <!--
+    <span id="ch_result">결과가 출력됩니다</span>
+    <br /><br /><br /><br />-->
+    <!-- <a class="btn btn-secondary" href="#" role="button">계산하기</a> -->
+    <!--
+    <span id="arm_result">결과가 출력됩니다</span>
+    <br /><br /><br /><br />
+    <span id="length_result">결과가 출력됩니다</span>-->
+  </div>
+</div>
+<br />
+
+<script>
+  const t_shoulder1 = document.getElementById("shoulder1");
+  const t_shoulder2 = document.getElementById("shoulder2");
+  const sh_result = document.getElementById("sh_result");
+  const POSITIVE_COLOR = "#3498db";
+  const NEGATIVE_COLOR = "#e74c3c";
+  const BASE_COLOR = "#1e272e";
+  const shoulder1 = parseFloat(t_shoulder1);
+  const shoulder2 = parseFloat(t_shoulder2);
+
+  //console.log(shoulder1);
+
+  function result_shoulder() {
+    const f_rs = shoulder1.value - shoulder2.value;
+    const rs = parseFloat(f_rs.toFixed(3));
+
+    // alert("결과는! " + rs);
+    console.log(typeof shoulder1, typeof shoulder2, typeof rs);
+    sh_result.innerHTML = rs;
+    if (-3 <= rs && rs <= 3) {
+      sh_result.style.color = POSITIVE_COLOR;
+    } else {
+      sh_result.style.color = NEGATIVE_COLOR;
+    }
+    //  else {
+    // sh_result.style.color = BASE_COLOR;
+    // }
+  }
+
+  /*
+    function result_shoulder_color() {
+      const rs = shoulder1.value - shoulder2.value;
+      if (rs > 0) {
+        sh_result.style.color = POSITIVE_COLOR;
+      } else if (rs < 0) {
+        sh_result.style.color = NEGATIVE_COLOR;
+      } else {
+        sh_result.style.color = BASE_COLOR;
+      }
+    }
+    result_shoulder_color();
+  */
+  const chest1 = document.getElementById("chest1");
+  const chest2 = document.getElementById("chest2");
+  const ch_result = document.getElementById("ch_result");
+
+  //console.log(shoulder1);
+
+  function result_chest() {
+    const f_rc = chest1.value - chest2.value;
+    const rc = f_rc.toFixed(3);
+    // alert("결과는! " + rs);
+    ch_result.innerHTML = rc;
+    if (-3 <= rc && rc <= 3) {
+      ch_result.style.color = POSITIVE_COLOR;
+    } else {
+      ch_result.style.color = NEGATIVE_COLOR;
+    }
+    //  else {
+    // ch_result.style.color = BASE_COLOR;
+    // }
+  }
+
+  const arm1 = document.getElementById("arm1");
+  const arm2 = document.getElementById("arm2");
+  const arm_result = document.getElementById("arm_result");
+
+  //console.log(shoulder1);
+
+  function result_arm() {
+    const f_ar = arm1.value - arm2.value;
+    const ar = f_ar.toFixed(3);
+    // alert("결과는! " + rs);
+    arm_result.innerHTML = ar;
+    if (-3 <= ar && ar <= 3) {
+      arm_result.style.color = POSITIVE_COLOR;
+    } else {
+      arm_result.style.color = NEGATIVE_COLOR;
+    }
+    // else {
+    // arm_result.style.color = BASE_COLOR;
+    // }
+  }
+
+  const length1 = document.getElementById("length1");
+  const length2 = document.getElementById("length2");
+  const length_result = document.getElementById("length_result");
+
+  //console.log(shoulder1);
+
+  function result_length() {
+    const f_rl = length1.value - length2.value;
+    const rl = f_rl.toFixed(3);
+    // alert("결과는! " + rs);
+    length_result.innerHTML = rl;
+    if (-3 <= rl && rl <= 3) {
+      length_result.style.color = POSITIVE_COLOR;
+      console.log("적합");
+    } else {
+      length_result.style.color = NEGATIVE_COLOR;
+      console.log("부적합");
+    }
+    //  else {
+    // length_result.style.color = BASE_COLOR;
+    // }
+  }
+</script>
+
+{% endblock %}

@@ -18,7 +18,7 @@ def detail(request):
     return render(request, 'detail.html')
 
 def create(request): #입력 내용 데이터베이스에 넣어줌
-    cloth= Newcloth()
+    cloth = Newcloth()
     cloth.cloth_name= request.POST['cloth_name']
     cloth.shoulder= request.POST['shoulder']
     cloth.chest= request.POST['chest']
@@ -28,6 +28,24 @@ def create(request): #입력 내용 데이터베이스에 넣어줌
     cloth.pub_date = timezone.datetime.now()
     cloth.save()
     return render(request, 'record.html')
+
+def update(request, pk):
+    cloth = get_object_or_404(Newcloth, pk=pk)
+    form = NewclothPost(instance=cloth)
+
+    if form.is_valid():
+        form.save()
+        return render(request, 'record.html')
+    return render(request, 'update.html', {'form':form})
+
+def delete(request, pk):
+    cloth = get_object_or_404(Newcloth, pk=pk)
+    cloth.delete()
+    return redirect('home')
+
+def compare(request, pk):
+    cloth_compare = get_object_or_404(Newcloth, pk=pk)
+    return render(request, 'compare.html', {'record':cloth_compare})
 
 def newcloth(request):
     #입력된 내용을 처리 기능 -> POST
@@ -42,3 +60,7 @@ def newcloth(request):
     else:
         form = NewclothPost()
         return render(request, 'new.html', {'form':form})
+
+
+    
+    

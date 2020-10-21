@@ -1,0 +1,147 @@
+{% extends 'base.html'%} {% block design %}
+<style type="text/css">
+  .account_container {
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .radio_button {
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .new_cloth {
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+    vertical-align: middle;
+  }
+</style>
+{%endblock%} {% block contents %} {% include 'closet.html' %}
+<!--radio button type-->
+<div class="radio_button">
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary active">
+      <input type="radio" name="options" id="option1" checked /> 상의
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option2" /> 하의
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option3" /> 아우터
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option4" /> 원피스
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option5" /> 악세사리
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option6" /> 신발
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option7" /> 속옷
+    </label>
+  </div>
+  <hr />
+</div>
+
+<div class="radio_button">
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary active">
+      <input type="radio" name="options" id="option1" checked /> 반팔티
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option2" /> 맨투맨
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option3" /> 후드티
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option4" /> 레글런
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option5" /> 슬리브리스
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option6" /> 베스트
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option7" /> 셔츠
+    </label>
+  </div>
+  <hr />
+  <div class="new_cloth">
+    <form enctype="multipart/form-data" method = "POST">
+      {% csrf_token %}
+      <table>
+        {{form.as_table}}
+      </table>
+      <h4>옷명칭</h4>
+      <input type="text" name="cloth_name" />
+      <br />
+      <br />
+      <h4>어깨길이</h4>
+      <input type="text" name="shoulder" />
+      <br />
+      <br />
+      <h4>가슴단면</h4>
+      <input type="text" name="chest" />
+      <br />
+      <br />
+      <h4>팔길이</h4>
+      <input type="text" name="arm" />
+      <br />
+      <br />
+      <h4>총장</h4>
+      <input type="text" name="total_length" />
+      <br />
+      <br />
+      <h4>사진첨부</h4>
+      <input type="file" name="image" />
+      <br />
+      <br />
+      <!--
+      <a
+        href="#"
+        class="btn btn-secondary btn-lg active"
+        role="button"
+        aria-pressed="true"
+        >입력</a
+      >
+      -->
+
+      <input class="btn btn-dark" type="submit" value="입력" />
+
+      <br />
+      <br />
+    </form>
+  </div>
+  <!--
+  <div class="container">
+    <form method="POST">
+      {% csrf_token %}
+      <table>
+        {{form.as_table}}
+      </table>
+      <br />
+      <input class="btn btn-dark" type="submit" value="제출하기" />
+    </form>
+  </div>-->
+  <hr>
+</div>
+<footer class="text-muted">
+  <div class="container">
+    <p class="float-right">
+      <a href="#">Back to top</a>
+    </p>
+      Find Fine Fit! &copy; 2020 FFF. &middot;
+      <a href="https://github.com/ProjectFFF/FFF">GitHub</a> &middot;
+      <a href="https://choosealicense.com/licenses/bsd-2-clause/">License</a>
+    </p>
+  </div>
+</footer>
+{%endblock %}
