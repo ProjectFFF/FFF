@@ -86,7 +86,7 @@
   <div class="mysize2">
     <p>쇼핑몰 사이즈</p>
     <label for="shoulder">어깨</label><br />
-    <p id="shoulder2">{{form.shoulder}}</p>
+    <p id="shoulder2">{{record.shoulder}}</p>
     <!--
     <input
       type="text"
@@ -166,23 +166,25 @@
 <br />
 
 <script>
-  const t_shoulder1 = document.getElementById("shoulder1");
+  const shoulder1 = document.getElementById("shoulder1");
   const t_shoulder2 = document.getElementById("shoulder2");
+  const shoulder2 = t_shoulder2.innerText;
   const sh_result = document.getElementById("sh_result");
   const POSITIVE_COLOR = "#3498db";
   const NEGATIVE_COLOR = "#e74c3c";
   const BASE_COLOR = "#1e272e";
-  const shoulder1 = parseFloat(t_shoulder1);
-  const shoulder2 = parseFloat(t_shoulder2);
+
+  // const shoulder2 = parseFloat(t_shoulder2);
 
   //console.log(shoulder1);
 
   function result_shoulder() {
-    const f_rs = shoulder1.value - shoulder2.value;
+    console.log(shoulder1.value, shoulder1, shoulder2);
+    const f_rs = shoulder1.value - shoulder2;
     const rs = parseFloat(f_rs.toFixed(3));
 
     // alert("결과는! " + rs);
-    console.log(typeof shoulder1, typeof shoulder2, typeof rs);
+    // console.log(typeof shoulder1, typeof shoulder2, typeof rs);
     sh_result.innerHTML = rs;
     if (-3 <= rs && rs <= 3) {
       sh_result.style.color = POSITIVE_COLOR;
@@ -208,13 +210,14 @@
     result_shoulder_color();
   */
   const chest1 = document.getElementById("chest1");
-  const chest2 = document.getElementById("chest2");
+  const t_chest2 = document.getElementById("chest2");
+  const chest2 = t_chest2.innerText;
   const ch_result = document.getElementById("ch_result");
 
   //console.log(shoulder1);
 
   function result_chest() {
-    const f_rc = chest1.value - chest2.value;
+    const f_rc = chest1.value - chest2;
     const rc = f_rc.toFixed(3);
     // alert("결과는! " + rs);
     ch_result.innerHTML = rc;
@@ -229,13 +232,14 @@
   }
 
   const arm1 = document.getElementById("arm1");
-  const arm2 = document.getElementById("arm2");
+  const t_arm2 = document.getElementById("arm2");
+  const arm2 = t_arm2.innerText;
   const arm_result = document.getElementById("arm_result");
 
   //console.log(shoulder1);
 
   function result_arm() {
-    const f_ar = arm1.value - arm2.value;
+    const f_ar = arm1.value - arm2;
     const ar = f_ar.toFixed(3);
     // alert("결과는! " + rs);
     arm_result.innerHTML = ar;
@@ -250,13 +254,14 @@
   }
 
   const length1 = document.getElementById("length1");
-  const length2 = document.getElementById("length2");
+  const t_length2 = document.getElementById("length2");
+  const length2 = t_length2.innerText;
   const length_result = document.getElementById("length_result");
 
   //console.log(shoulder1);
 
   function result_length() {
-    const f_rl = length1.value - length2.value;
+    const f_rl = length1.value - length2;
     const rl = f_rl.toFixed(3);
     // alert("결과는! " + rs);
     length_result.innerHTML = rl;
