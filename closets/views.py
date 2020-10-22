@@ -12,7 +12,8 @@ def record(request):
     return render(request, 'record.html', {'records':records})
 
 def mycloset(request):
-    return render(request, 'mycloset.html')
+    n_records = Newcloth.objects
+    return render(request, 'mycloset.html', {'records':n_records})
 
 def detail(request):
     return render(request, 'detail.html')
@@ -33,9 +34,18 @@ def update(request, pk):
     cloth = get_object_or_404(Newcloth, pk=pk)
     form = NewclothPost(instance=cloth)
 
-    if form.is_valid():
-        form.save()
-        return render(request, 'record.html')
+    if request.method == "POST":
+        if form.is_valid():
+            cloth.cloth_name= request.cleaned_data['cloth_name']
+            cloth.shoulder= request.cleaned_data['shoulder']
+            cloth.chest= request.cleaned_data['chest']
+            cloth.arm= request.cleaned_data['arm']
+            cloth.total_length= request.cleaned_data['total_length']
+            cloth.image= request.cleaned_data['image']
+            form.save()
+            return render(request, 'record.html')
+        else:
+            return render(request, 'home.html')
     return render(request, 'update.html', {'form':form})
 
 def delete(request, pk):
@@ -45,7 +55,8 @@ def delete(request, pk):
 
 def compare(request, pk):
     cloth_compare = get_object_or_404(Newcloth, pk=pk)
-    return render(request, 'compare.html', {'record':cloth_compare})
+    form = NewclothPost(instance=cloth_compare)
+    return render(request, 'compare.html', {'record':cloth_compare, 'form':form})
 
 def newcloth(request):
     #입력된 내용을 처리 기능 -> POST

@@ -19,6 +19,7 @@
     text-align: center;
     vertical-align: middle;
   }
+  
 </style>
 {%endblock%} {% block contents %} {% include 'closet.html' %}
 <!--radio button type-->
@@ -73,35 +74,34 @@
       <input type="radio" name="options" id="option7" /> 셔츠
     </label>
   </div>
+</div>
   <hr />
   <div class="new_cloth">
     <form enctype="multipart/form-data" method = "POST">
       {% csrf_token %}
-      <table>
-        {{form.as_table}}
-      </table>
+      
       <h4>옷명칭</h4>
-      <input type="text" name="cloth_name" />
+      <input type="{{form.cloth_name}}" name="cloth_name" />
       <br />
       <br />
       <h4>어깨길이</h4>
-      <input type="text" name="shoulder" />
+      <input type="{{form.shoulder}}" name="shoulder" />
       <br />
       <br />
       <h4>가슴단면</h4>
-      <input type="text" name="chest" />
+      <input type="{{form.chest}}" name="chest" />
       <br />
       <br />
       <h4>팔길이</h4>
-      <input type="text" name="arm" />
+      <input type="{{form.arm}}" name="arm" />
       <br />
       <br />
       <h4>총장</h4>
-      <input type="text" name="total_length" />
+      <input type="{{form.total_length}}" name="total_length" />
       <br />
       <br />
       <h4>사진첨부</h4>
-      <input type="file" name="image" />
+      <input type="{{form.image}}" name="image" />
       <br />
       <br />
       <!--
@@ -113,7 +113,7 @@
         >입력</a
       >
       -->
-
+       
       <input class="btn btn-dark" type="submit" value="입력" />
 
       <br />
@@ -132,7 +132,7 @@
     </form>
   </div>-->
   <hr>
-</div>
+
 <footer class="text-muted">
   <div class="container">
     <p class="float-right">
