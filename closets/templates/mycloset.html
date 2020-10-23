@@ -23,20 +23,19 @@
       >
         <div class="col p-4 d-flex flex-column position-static">
           <strong class="d-inline-block mb-2 text-primary">카테고리</strong>
-          <h3 class="mb-0">{{record.cloth_name}}</h3>
-          <div class="mb-1 text-muted">어깨 길이 - {{record.shoulder}}</div>
-          <div class="mb-1 text-muted">가슴단면 - {{record.chest}}</div>
-          <div class="mb-1 text-muted">팔 길이 - {{record.arm}}</div>
-          <div class="mb-1 text-muted">총장 - {{record.total_length}}</div>
-          <p class="card-text mb-auto">
-            코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트코멘트
-          </p>
+          <h3 class="mb-0">{{record.cloth_name_c}}</h3>
+          <div class="mb-1 text-muted">어깨 길이 - {{record.shoulder_c}}</div>
+          <div class="mb-1 text-muted">가슴단면 - {{record.chest_c}}</div>
+          <div class="mb-1 text-muted">팔 길이 - {{record.arm_c}}</div>
+          <div class="mb-1 text-muted">총장 - {{record.total_length_c}}</div>
+          <p class="card-text mb-auto">{{record.review}}</p>
           <a href="#" class="stretched-link">공유</a>
           <a href="#" class="stretched-link">수정</a>
+          <a href="#" class="stretched-link">제거</a>
         </div>
         <div class="col-auto d-none d-lg-block">
           <img
-            src="{{record.image.url}}"
+            src="{{record.image_c.url}}"
             width="200"
             class="bd-placeholder-img"
             focusable="false"

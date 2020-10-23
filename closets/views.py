@@ -12,8 +12,8 @@ def record(request):
     return render(request, 'record.html', {'records':records})
 
 def mycloset(request):
-    n_records = Newcloth.objects
-    return render(request, 'mycloset.html', {'records':n_records})
+    records_c = Newcloth_closet.objects
+    return render(request, 'mycloset.html', {'records':records_c})
 
 def detail(request, pk):
     cloth = get_object_or_404(Newcloth, pk=pk)
