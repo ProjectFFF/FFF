@@ -13,4 +13,5 @@ urlpatterns = [
     path('compare/<int:pk>', views.compare, name="compare"),
     path('edit/<int:pk>', views.edit, name="edit"),
     path('create_c/', views.create_c, name="create_c"),
+    path('delete_c/<int:pk>', views.delete_c, name="delete_c"),
 ]

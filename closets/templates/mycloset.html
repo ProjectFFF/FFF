@@ -31,7 +31,7 @@
           <p class="card-text mb-auto">{{record.review}}</p>
           <a href="#" class="stretched-link">공유</a>
           <a href="#" class="stretched-link">수정</a>
-          <a href="#" class="stretched-link">제거</a>
+          <a href="{%url 'delete_c' record.id%}" class="stretched-link">제거</a>
         </div>
         <div class="col-auto d-none d-lg-block">
           <img
@@ -94,6 +94,17 @@
       </div>
     </div>
   </div>
-
+  <hr>
+  <footer class="text-muted">
+    <div class="container">
+      <p class="float-right">
+        <a href="#">Back to top</a>
+      </p>
+        Find Fine Fit! &copy; 2020 FFF. &middot;
+        <a href="https://github.com/ProjectFFF/FFF">GitHub</a> &middot;
+        <a href="https://choosealicense.com/licenses/bsd-2-clause/">License</a>
+      </p>
+    </div>
+  </footer>
   {% endblock %}
 </div>

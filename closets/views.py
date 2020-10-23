@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from django.core.paginator import Paginator
 from .models import Newcloth, Newcloth_closet
-from .forms import NewclothPost
+from .forms import NewclothPost, ImgclothPost
 
 def new(request):
     return render(request, 'new.html')
@@ -18,7 +18,7 @@ def mycloset(request):
 def detail(request, pk):
     cloth = get_object_or_404(Newcloth, pk=pk)
     form = NewclothPost(instance=cloth)
-    return render(request, 'detail.html', {'cloth':cloth})
+    return render(request, 'detail.html', {'cloth':cloth, 'form':form})
 
 def create(request): #입력 내용 데이터베이스에 넣어줌
     cloth = Newcloth()
@@ -34,6 +34,13 @@ def create(request): #입력 내용 데이터베이스에 넣어줌
 
 def create_c(request): #입력 내용 데이터베이스에 넣어줌
     cloth = Newcloth_closet()
+    form = NewclothPost(instance=cloth)
+    # r_cloth = get_object_or_404(Newcloth, pk=pk)
+    # if form.is_valid():
+    
+    # post = form.save(commit=False)
+    # post.save()
+    
     cloth.cloth_name_c= request.POST['cloth_name_c']
     cloth.shoulder_c= request.POST['shoulder_c']
     cloth.chest_c= request.POST['chest_c']
@@ -45,7 +52,9 @@ def create_c(request): #입력 내용 데이터베이스에 넣어줌
     cloth.tag= request.POST['tag']
     cloth.review= request.POST['review']
     cloth.save()
+    
     return render(request, 'mycloset.html')
+    # return render(request, 'mycloset.html')
 
 def update(request, pk):
     cloth = get_object_or_404(Newcloth, pk=pk)
@@ -74,10 +83,16 @@ def delete(request, pk):
     cloth.delete()
     return redirect('home')
 
+def delete_c(request, pk):
+    cloth = get_object_or_404(Newcloth_closet, pk=pk)
+    cloth.delete()
+    return redirect('home')
+
 def compare(request, pk):
     cloth_compare = get_object_or_404(Newcloth, pk=pk)
     form = NewclothPost(instance=cloth_compare)
     return render(request, 'compare.html', {'record':cloth_compare, 'form':form})
+
 
 def newcloth(request):
     #입력된 내용을 처리 기능 -> POST
@@ -92,7 +107,6 @@ def newcloth(request):
     else:
         form = NewclothPost()
         return render(request, 'new.html', {'form':form})
-
 
     
     
