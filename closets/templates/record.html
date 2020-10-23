@@ -1,7 +1,9 @@
 {% extends 'base.html'%} {% block design %}
 <style type="text/css">
   .account_container {
-    padding: 100px;
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
     text-align: center;
     vertical-align: middle;
   }
@@ -49,21 +51,39 @@
               </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button
-                    type="button"
+                  <a
+                    role="button"
                     class="btn btn-sm btn-outline-secondary"
+                    href="{%url 'detail' record.id%}"
                   >
-                    자세히
-                  </button>
-                  <button
-                    type="button"
+                    등록
+                  </a>
+                  <a
+                    role="button"
                     class="btn btn-sm btn-outline-secondary"
+                    href="{%url 'update' record.id%}"
                   >
                     수정
-                  </button>
+                  </a>
+                  <a
+                    role="button"
+                    class="btn btn-sm btn-outline-secondary"
+                    href="{%url 'delete' record.id%}"
+                  >
+                    제거
+                  </a>
+                  <a
+                    role="button"
+                    class="btn btn-sm btn-outline-secondary"
+                    href="{%url 'compare' record.id%}"
+                  >
+                    비교
+                  </a>
                 </div>
-                <small class="text-muted">9 mins</small>
+                
               </div>
+              <br>
+              <small class="text-muted">{{record.pub_date}}</small>
             </div>
           </div>
         </div>

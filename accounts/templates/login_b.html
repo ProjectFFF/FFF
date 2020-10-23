@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block contents %}
+<div class="container-fluid">
+  <h1>Login</h1>
+
+  <form method="POST" action="{%url 'login'%}">
+    {% csrf_token %} Username:
+    <br />
+    <input name="username" type="text" value="" />
+    <br />
+    Password:
+    <br />
+    <input name="password" type="password" value="" />
+    <br />
+    <br />
+    <!-- <input class="btn btn-primary" type="submit" value="Login" /> -->
+    <input
+      class="btn btn-secondary btn-lg btn-block"
+      type="submit"
+      value="로그인"
+    />
+
+    <a
+      class="btn btn-secondary btn-lg btn-block"
+      href="{% url 'signup' %}"
+      role="button"
+      >회원가입</a
+    >
+  </form>
+</div>
+{% endblock %}
