@@ -11,4 +11,6 @@ urlpatterns = [
     path('update/<int:pk>', views.update, name="update"),
     path('delete/<int:pk>', views.delete, name="delete"),
     path('compare/<int:pk>', views.compare, name="compare"),
+    path('edit/<int:pk>', views.edit, name="edit"),
+    path('create_c/', views.create_c, name="create_c"),
 ]

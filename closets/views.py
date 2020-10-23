@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from django.core.paginator import Paginator
-from .models import Newcloth
+from .models import Newcloth, Newcloth_closet
 from .forms import NewclothPost
 
 def new(request):
@@ -15,8 +15,10 @@ def mycloset(request):
     n_records = Newcloth.objects
     return render(request, 'mycloset.html', {'records':n_records})
 
-def detail(request):
-    return render(request, 'detail.html')
+def detail(request, pk):
+    cloth = get_object_or_404(Newcloth, pk=pk)
+    form = NewclothPost(instance=cloth)
+    return render(request, 'detail.html', {'cloth':cloth})
 
 def create(request): #입력 내용 데이터베이스에 넣어줌
     cloth = Newcloth()
@@ -30,23 +32,42 @@ def create(request): #입력 내용 데이터베이스에 넣어줌
     cloth.save()
     return render(request, 'record.html')
 
+def create_c(request): #입력 내용 데이터베이스에 넣어줌
+    cloth = Newcloth_closet()
+    cloth.cloth_name_c= request.POST['cloth_name_c']
+    cloth.shoulder_c= request.POST['shoulder_c']
+    cloth.chest_c= request.POST['chest_c']
+    cloth.arm_c= request.POST['arm_c']
+    cloth.total_length_c= request.POST['total_length_c']
+    cloth.image_c= request.FILES['image_c']
+    cloth.pub_date = timezone.datetime.now()
+    cloth.shopping_link= request.POST['shopping_link']
+    cloth.tag= request.POST['tag']
+    cloth.review= request.POST['review']
+    cloth.save()
+    return render(request, 'mycloset.html')
+
 def update(request, pk):
     cloth = get_object_or_404(Newcloth, pk=pk)
     form = NewclothPost(instance=cloth)
-
+    return render(request, 'update.html', {'form':form, 'cloth':cloth})
+   
+def edit(request, pk):
+    cloth = get_object_or_404(Newcloth, pk=pk)   
     if request.method == "POST":
-        if form.is_valid():
-            cloth.cloth_name= request.cleaned_data['cloth_name']
-            cloth.shoulder= request.cleaned_data['shoulder']
-            cloth.chest= request.cleaned_data['chest']
-            cloth.arm= request.cleaned_data['arm']
-            cloth.total_length= request.cleaned_data['total_length']
-            cloth.image= request.cleaned_data['image']
-            form.save()
-            return render(request, 'record.html')
-        else:
-            return render(request, 'home.html')
-    return render(request, 'update.html', {'form':form})
+        cloth.cloth_name= request.POST['cloth_name']
+        cloth.shoulder=  request.POST['shoulder']
+        cloth.chest= request.POST['chest']
+        cloth.arm= request.POST['arm']
+        cloth.total_length= request.POST['total_length']
+        cloth.image= request.POST['image']
+        cloth.save()
+        return render(request, 'record.html')   
+    else:
+         return render(request, 'home.html')
+    return render(request, 'record.html', {'cloth':cloth})
+         
+    
 
 def delete(request, pk):
     cloth = get_object_or_404(Newcloth, pk=pk)

@@ -5,6 +5,18 @@
     text-align: center;
     vertical-align: middle;
   }
+  .radio_button {
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .new_cloth {
+    padding-left: 100px;
+    padding-right: 100px;
+    text-align: center;
+    vertical-align: middle;
+  }
 </style>
 {%endblock%} {% block contents %} {% include 'closet.html' %}
 <div class="radio_button">
@@ -60,46 +72,35 @@
     </div>
     <hr />
     <div class="new_cloth">
-      <form action="{% url 'create' %}" enctype="multipart/form-data" method = "POST">
+      <form action="{% url 'create_c' %}" enctype="multipart/form-data" method = "POST">
         {% csrf_token %}
         <h4>옷명칭</h4>
-        <input type="text" name="cloth_name" />
+        <input type="text" name="cloth_name_c" value="{{cloth.cloth_name}}" />
         <br />
         <br />
         <h4>어깨길이</h4>
-        <input type="text" name="shoulder" />
+        <input type="text" name="shoulder_c" value="{{cloth.shoulder}}" />
         <br />
         <br />
         <h4>가슴단면</h4>
-        <input type="text" name="chest" />
+        <input type="text" name="chest_c" value="{{cloth.chest}}" />
         <br />
         <br />
         <h4>팔길이</h4>
-        <input type="text" name="arm" />
+        <input type="text" name="arm_c" value="{{cloth.arm}}"/>
         <br />
         <br />
         <h4>총장</h4>
-        <input type="text" name="total_length" />
+        <input type="text" name="total_length_c" value="{{cloth.total_length}}" />
         <br />
         <br />
         <h4>사진첨부</h4>
-        <input type="file" name="image" />
+        <input type="file" name="image_c" value="{{cloth.image}}"/>
         <br />
         <br />
-        <!--
-        <a
-          href="#"
-          class="btn btn-secondary btn-lg active"
-          role="button"
-          aria-pressed="true"
-          >입력</a
-        >
-        -->
+        
   
-        <input class="btn btn-dark" type="submit" value="입력" />
-  
-        <br />
-        <br />
+        
         <h4>쇼핑몰 링크</h4>
         <input type="text" name="shopping_link" />
         <br />
@@ -112,7 +113,9 @@
         <input type="text" name="review" />
         <br />
         <br />
-
+        <input class="btn btn-dark" type="submit" value="입력" />
+        <br />
+        <br />
       </form>
     </div>
     <!--

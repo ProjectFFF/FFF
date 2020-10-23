@@ -77,31 +77,31 @@
 </div>
   <hr />
   <div class="new_cloth">
-    <form enctype="multipart/form-data" method = "POST">
+    <form  action="{% url 'edit' %}" enctype="multipart/form-data" method = "POST">
       {% csrf_token %}
       
       <h4>옷명칭</h4>
-      <input type="{{form.cloth_name}}" name="cloth_name" />
+      <input type="text" name="cloth_name" value="{{cloth.cloth_name}}" />
       <br />
       <br />
       <h4>어깨길이</h4>
-      <input type="{{form.shoulder}}" name="shoulder" />
+      <input type="text" name="shoulder" value="{{cloth.shoulder}}" />
       <br />
       <br />
       <h4>가슴단면</h4>
-      <input type="{{form.chest}}" name="chest" />
+      <input type="text" name="chest" value="{{cloth.chest}}" />
       <br />
       <br />
       <h4>팔길이</h4>
-      <input type="{{form.arm}}" name="arm" />
+      <input type="text" name="arm" value="{{cloth.arm}}"/>
       <br />
       <br />
       <h4>총장</h4>
-      <input type="{{form.total_length}}" name="total_length" />
+      <input type="text" name="total_length" value="{{cloth.total_length}}" />
       <br />
       <br />
       <h4>사진첨부</h4>
-      <input type="{{form.image}}" name="image" />
+      <input type="file" name="image" value="{{cloth.image}}"/>
       <br />
       <br />
       <!--
