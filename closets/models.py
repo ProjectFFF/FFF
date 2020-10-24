@@ -30,6 +30,7 @@ class Newcloth_closet(models.Model):
     tag = models.CharField(max_length=255, blank=True, null=True)
     review = models.CharField(max_length=255, blank=True, null=True)
     pub_date = models.DateTimeField('date published', blank=True, null=True)
+    writer_c = models.CharField(max_length=255, default="admin")
 
     def __str__(self):
         return self.cloth_name_c

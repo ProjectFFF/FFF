@@ -29,9 +29,11 @@
           <div class="mb-1 text-muted">팔 길이 - {{record.arm_c}}</div>
           <div class="mb-1 text-muted">총장 - {{record.total_length_c}}</div>
           <p class="card-text mb-auto">{{record.review}}</p>
-          <a href="#" class="stretched-link">공유</a>
+          <!-- <a href="#" class="stretched-link">공유</a> -->
           <a href="#" class="stretched-link">수정</a>
           <a href="{%url 'delete_c' record.id%}" class="stretched-link">제거</a>
+          <br>
+          <small class="text-muted">작성자 - {{record.writer_c}}</small>
         </div>
         <div class="col-auto d-none d-lg-block">
           <img

@@ -55,6 +55,7 @@ def create_c(request): #입력 내용 데이터베이스에 넣어줌
     cloth.shopping_link= request.POST['shopping_link']
     cloth.tag= request.POST['tag']
     cloth.review= request.POST['review']
+    cloth.writer_c = request.user.get_username()
     cloth.save()
     
     return render(request, 'mycloset.html')
