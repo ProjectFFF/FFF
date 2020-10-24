@@ -3,6 +3,9 @@ from django.utils import timezone
 from django.core.paginator import Paginator
 from .models import Newcloth, Newcloth_closet
 from .forms import NewclothPost, ImgclothPost
+from django.contrib.auth.models import User
+from django.contrib import auth
+from accounts.models import Member
 
 def new(request):
     return render(request, 'new.html')
@@ -29,6 +32,7 @@ def create(request): #입력 내용 데이터베이스에 넣어줌
     cloth.total_length= request.POST['total_length']
     cloth.image= request.FILES['image']
     cloth.pub_date = timezone.datetime.now()
+    cloth.writer = request.user.get_username()
     cloth.save()
     return render(request, 'record.html')
 
@@ -70,6 +74,7 @@ def edit(request, pk):
         cloth.arm= request.POST['arm']
         cloth.total_length= request.POST['total_length']
         cloth.image= request.POST['image']
+       
         cloth.save()
         return render(request, 'record.html')   
     else:
