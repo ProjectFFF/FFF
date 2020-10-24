@@ -44,123 +44,16 @@
     display: flex;
     justify-content: space-around;
   }
-  .hidden {
-    display: none;
-  }
-  .info {
-    display: none;
-  }
+  
+  
 </style>
-<!--css다시하기-->
-<script>
-  for(i = 0; i < $("#writer_name").length; i++){
-    if($("#user_name").text() == $("#writer_name")[i].innerHTML){
-      $("#control_id"+i).removeClass("hidden");
-      console.log("True")
-      console.log($("#user_name").text())
-      console.log($("#writer_name")[i].innerHTML)
-    }
-    else
-      console.log("False")
-      console.log($("#user_name").text())
-      console.log($("#writer_name")[i].innerHTML)
-  }
-</script>
 
 
 <div class="others_title">
   <h3>타인옷장</h3>
 </div>
 <hr />
-<!--radio button type
-<div class="radio_button">
-  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-    <label class="btn btn-secondary active">
-      <input type="radio" name="options" id="option1" checked /> 상의
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="options" id="option2" /> 하의
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="options" id="option3" /> 아우터
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="options" id="option4" /> 원피스
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="options" id="option5" /> 악세사리
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="options" id="option5" /> 신발
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="options" id="option5" /> 속옷
-    </label>
-  </div>
-</div>
-<hr />
--->
-<form action="{%url 'othersclosets_t'%}" method="GET">
-<div class="radio_button">
-  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-    <label class="btn btn-secondary active">
-      <input type="radio" name="q" id="option1" value="상의" checked /> 상의
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="q" id="option2" value="하의"/> 하의
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="q" id="option3" value="악세사리"/> 악세사리
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="q" id="option4" value="신발"/> 신발
-    </label>
-  </div>
-  <hr />
-</div>
 
-<div class="radio_button">
-  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-    <label class="btn btn-secondary active">
-      <input type="radio" name="q" id="option1" value="반팔티" checked /> 반팔티
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="q" id="option2" value="맨투맨 "/> 맨투맨
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="q" id="option3" value="후드티" /> 후드티
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="q" id="option4" value="레글런" /> 레글런
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="q" id="option5" value="슬리브리스" /> 슬리브리스
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="q" id="option6" value="베스트" /> 베스트
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="q" id="option7" value="셔츠" /> 셔츠
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="q" id="option8" value="아우터"/> 아우터
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="q" id="option9" value="원피스"/> 원피스
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name=q" id="option10" value="악세사리" /> 악세사리
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="q" id="option11" value="신발" /> 신발
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="q" id="option12" value="바지" /> 바지
-    </label>
-  </div>
-</div>
-<input type="submit" value="검색">
-</form>
 <div class="category1">
   <span role="button" tabindex="0">상의</span>
   <span role="button" tabindex="0">하의</span>
@@ -171,40 +64,7 @@
   <span role="button" tabindex="0">속옷</span>
 </div>
 <hr />
-<!--checkbox type
-<div class="checkbox_button">
-  <div class="btn-group-toggle" data-toggle="buttons">
-    <label class="btn btn-secondary active">
-      <input type="checkbox" checked /> 상의
-    </label>
-    <label class="btn btn-secondary active">
-      <input type="checkbox" /> 하의
-    </label>
-    <label class="btn btn-secondary active">
-      <input type="checkbox" /> 아우터
-    </label>
-    <label class="btn btn-secondary active">
-      <input type="checkbox" /> 원피스
-    </label>
-    <label class="btn btn-secondary active">
-      <input type="checkbox" /> 악세사리
-    </label>
-    <label class="btn btn-secondary active">
-      <input type="checkbox" /> 신발
-    </label>
-    <label class="btn btn-secondary active">
-      <input type="checkbox" /> 속옷
-    </label>
-  </div>
-</div>
-<hr />
-<div class="category1">
-  <span type="button">상의</span> <span type="button">하의</span>
-  <span type="button">아우터</span> <span type="button">원피스</span>
-  <span type="button">악세사리</span> <span type="button">신발</span>
-  <span type="button">속옷</span>
-</div>
-<hr />-->
+
 <div class="category1">
   <span type="button" tabindex="0">반팔티</span>
   <span type="button" tabindex="0">맨투맨</span>
@@ -245,15 +105,11 @@
 <br />
 <br />
 <!--여기까지 상단부-->
-<form action="{%url 'othersclosets_t'%}" method="GET">
- 
-  <input type="text" name="q" value="{{ q }}">
-  <input type="submit" value="검색">
-</form>
+
 <div class="post">
   <div class="row mb-2">
     {% for record in records.all %}
-    <span class = "control hidden" id = "control_id{{ forloop.counter0 }}">
+    
       <div class="col-md-6">
         <div
           class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
@@ -287,7 +143,7 @@
           </div>
         </div>
       </div>
-    </span>
+    
     {%endfor%}
   
     <div class="col-md-6">

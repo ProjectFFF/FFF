@@ -23,61 +23,68 @@
 </style>
 {%endblock%} {% block contents %} {% include 'closet.html' %}
 <!--radio button type-->
+<form enctype="multipart/form-data" method = "POST">
 <div class="radio_button">
-  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-    <label class="btn btn-secondary active">
-      <input type="radio" name="options" id="option1" checked /> 상의
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="options" id="option2" /> 하의
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="options" id="option3" /> 아우터
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="options" id="option4" /> 원피스
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="options" id="option5" /> 악세사리
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="options" id="option6" /> 신발
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="options" id="option7" /> 속옷
-    </label>
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary active">
+        <input type="radio" name="p_category" id="option1" value="상의" checked /> 상의
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="p_category" id="option2" value="하의"/> 하의
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="p_category" id="option3" value="악세사리"/> 악세사리
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="p_category" id="option4" value="신발"/> 신발
+      </label>
+    </div>
+    <hr />
   </div>
-  <hr />
-</div>
-
-<div class="radio_button">
-  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-    <label class="btn btn-secondary active">
-      <input type="radio" name="options" id="option1" checked /> 반팔티
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="options" id="option2" /> 맨투맨
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="options" id="option3" /> 후드티
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="options" id="option4" /> 레글런
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="options" id="option5" /> 슬리브리스
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="options" id="option6" /> 베스트
-    </label>
-    <label class="btn btn-secondary">
-      <input type="radio" name="options" id="option7" /> 셔츠
-    </label>
+  
+  <div class="radio_button">
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+      <label class="btn btn-secondary active">
+        <input type="radio" name="options" id="option1" value="반팔티" checked /> 반팔티
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option2" value="맨투맨 "/> 맨투맨
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option3" value="후드티" /> 후드티
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option4" value="레글런" /> 레글런
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option5" value="슬리브리스" /> 슬리브리스
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option6" value="베스트" /> 베스트
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option7" value="셔츠" /> 셔츠
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option8" value="아우터"/> 아우터
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option9" value="원피스"/> 원피스
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name=options" id="option10" value="악세사리" /> 악세사리
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option11" value="신발" /> 신발
+      </label>
+      <label class="btn btn-secondary">
+        <input type="radio" name="options" id="option12" value="바지" /> 바지
+      </label>
+    </div>
   </div>
-</div>
   <hr />
   <div class="new_cloth">
-    <form enctype="multipart/form-data" method = "POST">
+    
       {% csrf_token %}
       
       <h4>옷명칭</h4>
@@ -118,8 +125,9 @@
 
       <br />
       <br />
-    </form>
+    
   </div>
+</form>  
   <!--
   <div class="container">
     <form method="POST">

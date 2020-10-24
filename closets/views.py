@@ -33,6 +33,8 @@ def create(request): #입력 내용 데이터베이스에 넣어줌
     cloth.image= request.FILES['image']
     cloth.pub_date = timezone.datetime.now()
     cloth.writer = request.user.get_username()
+    cloth.parent_category = request.POST['p_category']
+    cloth.subcategory = request.POST['options']
     cloth.save()
     return render(request, 'record.html')
 
@@ -56,6 +58,8 @@ def create_c(request): #입력 내용 데이터베이스에 넣어줌
     cloth.tag= request.POST['tag']
     cloth.review= request.POST['review']
     cloth.writer_c = request.user.get_username()
+    cloth.parent_category_c = request.POST['p_category']
+    cloth.subcategory_c = request.POST['options']
     cloth.save()
     
     return render(request, 'mycloset.html')

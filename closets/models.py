@@ -15,6 +15,8 @@ class Newcloth(models.Model):
     review = models.CharField(max_length=255, blank=True, null=True)
     pub_date = models.DateTimeField('date published', blank=True, null=True)
     writer = models.CharField(max_length=255, default="admin")
+    parent_category = models.CharField(max_length=255, default="상의")
+    subcategory = models.CharField(max_length=255, default="반팔티")
 
     def __str__(self):
         return self.cloth_name
@@ -31,6 +33,8 @@ class Newcloth_closet(models.Model):
     review = models.CharField(max_length=255, blank=True, null=True)
     pub_date = models.DateTimeField('date published', blank=True, null=True)
     writer_c = models.CharField(max_length=255, default="admin")
+    parent_category_c = models.CharField(max_length=255, default="상의")
+    subcategory_c = models.CharField(max_length=255, default="반팔티")
 
     def __str__(self):
         return self.cloth_name_c
