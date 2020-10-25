@@ -79,6 +79,8 @@ def edit(request, pk):
         cloth.arm= request.POST['arm']
         cloth.total_length= request.POST['total_length']
         cloth.image= request.POST['image']
+        cloth.parent_category = request.POST['p_category']
+        cloth.subcategory = request.POST['options']
        
         cloth.save()
         return render(request, 'record.html')   

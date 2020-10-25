@@ -250,7 +250,7 @@
                 class="form-control"
                 id="firstName"
                 placeholder="cm"
-                value=""
+                value="{{setting.height}}"
                 required
               />
               <div class="invalid-feedback">Valid first name is required.</div>
@@ -262,7 +262,7 @@
                 class="form-control"
                 id="lastName"
                 placeholder="kg"
-                value=""
+                value="{{setting.weight}}"
                 required
               />
               <div class="invalid-feedback">Valid last name is required.</div>
@@ -271,7 +271,7 @@
           <div class="mb-3">
             <label for="inputPassword4">비밀번호</label>
             <input type="password" class="form-control" id="inputPassword4" placeholder=""
-            value=""
+            value="{{setting.password}}"
             required>
           </div>
           <div class="mb-3">
@@ -290,6 +290,7 @@
               class="form-control"
               id="email"
               placeholder="you@example.com"
+              value="{{setting.email}}"
             />
             <div class="invalid-feedback">
               Please enter a valid email address for shipping updates.
@@ -377,6 +378,7 @@
               class="form-control"
               id="phone"
               placeholder="010-0000-0000"
+              value="{{setting.phone_naumber}}"
             />
             <div class="invalid-feedback">
               Please enter a valid email address for shipping updates.
