@@ -17,6 +17,8 @@ def signup(request):
             member.gender= request.POST['gender']
             member.email= request.POST['email']
             member.phone_naumber= request.POST['phone_number']
+            member.height= request.POST['height']
+            member.weight= request.POST['weight']
             member.save()
             
             return redirect('home')

@@ -3,16 +3,21 @@ from django.utils import timezone
 from django.core.paginator import Paginator
 from .models import Newcloth, Newcloth_closet
 from .forms import NewclothPost, ImgclothPost
+from django.contrib.auth.models import User
+from django.contrib import auth
+from accounts.models import Member
 
 def new(request):
     return render(request, 'new.html')
 
 def record(request):
-    records = Newcloth.objects
+    records = Newcloth.objects.filter(writer=request.user.username)
+    # records = Newcloth.objects
     return render(request, 'record.html', {'records':records})
 
 def mycloset(request):
-    records_c = Newcloth_closet.objects
+    records_c = Newcloth_closet.objects.filter(writer_c=request.user.username)
+    # records_c = Newcloth_closet.objects
     return render(request, 'mycloset.html', {'records':records_c})
 
 def detail(request, pk):
@@ -29,6 +34,9 @@ def create(request): #입력 내용 데이터베이스에 넣어줌
     cloth.total_length= request.POST['total_length']
     cloth.image= request.FILES['image']
     cloth.pub_date = timezone.datetime.now()
+    cloth.writer = request.user.get_username()
+    cloth.parent_category = request.POST['p_category']
+    cloth.subcategory = request.POST['options']
     cloth.save()
     return render(request, 'record.html')
 
@@ -51,6 +59,9 @@ def create_c(request): #입력 내용 데이터베이스에 넣어줌
     cloth.shopping_link= request.POST['shopping_link']
     cloth.tag= request.POST['tag']
     cloth.review= request.POST['review']
+    cloth.writer_c = request.user.get_username()
+    cloth.parent_category_c = request.POST['p_category']
+    cloth.subcategory_c = request.POST['options']
     cloth.save()
     
     return render(request, 'mycloset.html')
@@ -70,6 +81,9 @@ def edit(request, pk):
         cloth.arm= request.POST['arm']
         cloth.total_length= request.POST['total_length']
         cloth.image= request.POST['image']
+        cloth.parent_category = request.POST['p_category']
+        cloth.subcategory = request.POST['options']
+       
         cloth.save()
         return render(request, 'record.html')   
     else:

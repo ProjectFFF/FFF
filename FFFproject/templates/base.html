@@ -158,15 +158,28 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'mysettings' %}">내 설정</a>
             </li>
+            {% if user.is_authenticated %}
             <li class="nav-item">
               <a
                 class="nav-link disabled"
                 href="#"
                 tabindex="-1"
                 aria-disabled="true"
+                
                 >{{user.username}}님 반갑습니다</a
               >
             </li>
+            {% else %}
+            <a
+                class="nav-link disabled"
+                href="#"
+                tabindex="-1"
+                aria-disabled="true"
+                
+                >환영합니다 로그인 해주세요</a
+              >
+            </li>
+            {% endif %}
           </ul>
           <div class="button_account">
             <form class="form-inline mt-2 mt-md-0">
