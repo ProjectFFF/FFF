@@ -30,8 +30,9 @@
           <div class="mb-1 text-muted">총장 - {{record.total_length_c}}</div>
           <p class="card-text mb-auto">{{record.review}}</p>
           <!-- <a href="#" class="stretched-link">공유</a> -->
-          <a href="#" class="stretched-link">수정</a>
-          <a href="{%url 'delete_c' record.id%}" class="stretched-link">제거</a>
+          <a href="{{record.shopping_link}}" >쇼핑몰 링크</a>
+         <br>
+          <a href="{%url 'delete_c' record.id%}" role="button" class="btn btn-sm btn-outline-secondary">제거</a>
           <br>
           <small class="text-muted">작성자 - {{record.writer_c}}</small>
         </div>
@@ -63,7 +64,7 @@
       </div>
     </div>
     {%endfor%}
-    <div class="col-md-6">
+    <!-- <div class="col-md-6">
       <div
         class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
       >
@@ -94,7 +95,7 @@
           </svg>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
   <hr>
   <footer class="text-muted">

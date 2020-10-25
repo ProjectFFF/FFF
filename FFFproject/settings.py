@@ -25,7 +25,7 @@ SECRET_KEY = '7_2^i!y)!fmfvg$s=n1i8h(c+1j+i#t+=ee))=vlkt*0l*9$a-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition

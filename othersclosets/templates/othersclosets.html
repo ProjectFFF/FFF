@@ -6,6 +6,12 @@
     vertical-align: middle;
   }
 
+  .post {
+    padding-bottom: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
   .others_title {
     justify-content: center;
     padding: 100px;
@@ -49,6 +55,16 @@
   }
   .info {
     display: none;
+  }
+  .inbtn{
+    margin: auto;
+    margin-left: 48%;
+    margin-top: 10px;
+  }
+  .search{
+    padding: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
   }
 </style>
 <!--css다시하기-->
@@ -147,9 +163,10 @@
     
   </div>
 </div>
-<input type="submit" value="검색">
+<div class="inbtn">
+<input type="submit" value="검색"></div>
 </form>
-<hr>
+<!-- <hr>
 <div class="category1">
   <span role="button" tabindex="0">상의</span>
   <span role="button" tabindex="0">하의</span>
@@ -159,7 +176,7 @@
   <span role="button" tabindex="0">신발</span>
   <span role="button" tabindex="0">속옷</span>
 </div>
-<hr />
+<hr /> -->
 <!--checkbox type
 <div class="checkbox_button">
   <div class="btn-group-toggle" data-toggle="buttons">
@@ -194,7 +211,7 @@
   <span type="button">속옷</span>
 </div>
 <hr />-->
-<div class="category1">
+<!-- <div class="category1">
   <span type="button" tabindex="0">반팔티</span>
   <span type="button" tabindex="0">맨투맨</span>
   <span type="button" tabindex="0">후드티</span>
@@ -229,7 +246,16 @@
   <span type="button">아방가르드</span> <span type="button">캐주얼</span>
   <span type="button">페미닌</span>
 </div>
-<hr />
+<hr /> -->
+<hr>
+<form action="{%url 'othersclosets_s'%}" method="GET" class="search">
+<div class="input-group mb-3">
+  <input type="text" class="form-control" name="q" value="{{q}}" placeholder="옷 이름 검색" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <div class="input-group-append">
+    <input class="btn btn-outline-secondary" type="submit" id="button-addon2" value="검색">
+  </div>
+</div>
+</form>
 <br />
 <br />
 <br />
@@ -255,9 +281,10 @@
             <div class="mb-1 text-muted">팔 길이 - {{record.arm_c}}</div>
             <div class="mb-1 text-muted">총장 - {{record.total_length_c}}</div>
             <p class="card-text mb-auto">{{record.review}}</p>
-            <!-- <a href="#" class="stretched-link">공유</a> -->
-            <a href="#" class="stretched-link">수정</a>
-            <a href="{%url 'delete_c' record.id%}" class="stretched-link">제거</a>
+            <a href="{{record.shopping_link}}" >쇼핑몰 링크</a>
+         <br>
+          <!-- <a href="{%url 'delete_c' record.id%}" role="button" class="btn btn-sm btn-outline-secondary">제거</a> -->
+          
             <br>
             <small class="text-muted">작성자 - {{record.writer_c}}</small>
       
