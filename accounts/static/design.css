@@ -7,3 +7,10 @@ html {
 #first {
   padding: 50px;
 }
+
+.login {
+  justify-content: center;
+  padding: 100px;
+  text-align: center;
+  vertical-align: middle;
+}

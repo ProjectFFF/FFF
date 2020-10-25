@@ -11,11 +11,13 @@ def new(request):
     return render(request, 'new.html')
 
 def record(request):
-    records = Newcloth.objects
+    records = Newcloth.objects.filter(writer=request.user.username)
+    # records = Newcloth.objects
     return render(request, 'record.html', {'records':records})
 
 def mycloset(request):
-    records_c = Newcloth_closet.objects
+    records_c = Newcloth_closet.objects.filter(writer_c=request.user.username)
+    # records_c = Newcloth_closet.objects
     return render(request, 'mycloset.html', {'records':records_c})
 
 def detail(request, pk):

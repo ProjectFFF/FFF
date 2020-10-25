@@ -52,7 +52,20 @@
   }
 </style>
 <!--css다시하기-->
-
+<script>
+  for(i = 0; i < $("#writer_name").length; i++){
+    if($("#user_name").text() == $("#writer_name")[i].innerHTML){
+      $("#control_id"+i).removeClass("hidden");
+      console.log("True")
+      console.log($("#user_name").text())
+      console.log($("#writer_name")[i].innerHTML)
+    }
+    else
+      console.log("False")
+      console.log($("#user_name").text())
+      console.log($("#writer_name")[i].innerHTML)
+  }
+</script>
 
 
 <div class="others_title">
@@ -144,10 +157,9 @@
     <label class="btn btn-secondary">
       <input type="radio" name="q" id="option12" value="바지" /> 바지
     </label>
-    
+    <input type="submit" value="검색">
   </div>
 </div>
-<input type="submit" value="검색">
 </form>
 <hr>
 <div class="category1">
@@ -242,7 +254,7 @@
 <div class="post">
   <div class="row mb-2">
     {% for record in records.all %}
-    
+    <span class = "control hidden" id = "control_id{{ forloop.counter0 }}">
       <div class="col-md-6">
         <div
           class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
@@ -261,8 +273,8 @@
             <br>
             <small class="text-muted">작성자 - {{record.writer_c}}</small>
       
-            <!-- <span id="user_name">{{ user.username }}</span>
-            <span class= "writer_name">{{record.writer_c}}</span> -->
+            <span id="user_name">{{ user.username }}</span>
+            <span class= "writer_name">{{record.writer_c}}</span>
             
           </div>
           <div class="col-auto d-none d-lg-block">
@@ -276,10 +288,10 @@
           </div>
         </div>
       </div>
-    
+    </span>
     {%endfor%}
   
-    <!-- <div class="col-md-6">
+    <div class="col-md-6">
       <div
         class="row no-gutters border rounded overflow-hidden shadow-sm h-md-250 position-relative"
       >
@@ -348,7 +360,7 @@
           </svg>
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
 </div>
 <footer class="text-muted">
