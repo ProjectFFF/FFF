@@ -1,4 +1,4 @@
-b# FFF(Find Fine Fit)
+# FFF(Find Fine Fit)
 
 > 온라인 쇼핑에서의 **사이즈 미스** 문제
 
